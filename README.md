@@ -32,7 +32,8 @@ Dieses Projekt ist unter der [MIT-Lizenz](LICENSE) lizenziert. Weitere Informati
 
 ## Mitwirkende
 
-- [Ihr Name](https://github.com/IhrGitHubBenutzername)
+- [Eva](https://github.com/evhwa)
+- [dragonaf](https://github.com/dragonaf3)
 
 Wir freuen uns über Mitwirkende, die dazu beitragen möchten, dieses Projekt zu verbessern. Bitte senden Sie Pull-Anfragen und erstellen Sie Issues, um Feedback und Vorschläge bereitzustellen.
 

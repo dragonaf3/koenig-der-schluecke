@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">König der Schlücke</string>
+    <string name="statistik_oeffnen">Statistik öffnen</string>
+    <string name="einstellungen_oeffnen">Einstellungen öffnen</string>
+    <string name="ueberschrift_koenig_der_schluecke">Überschrift: König der Schlücke</string>
+    <string name="koenig_der_schluecke">König der Schlücke</string>
+    <string name="neues_spiel_button">Neues Spiel</string>
+    <string name="beenden_button">Beenden</string>
+    <string name="spiel_beitreten_button">Spiel beitreten</string>
 </resources>

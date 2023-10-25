@@ -7,4 +7,6 @@
     <string name="neues_spiel_button">Neues Spiel</string>
     <string name="beenden_button">Beenden</string>
     <string name="spiel_beitreten_button">Spiel beitreten</string>
+    <string name="scanne_hier_den_qr_code">Scanne hier den QR-Code:</string>
+    <string name="zurueck_zum_hauptmenue">Zurück zum Hauptmenü</string>
 </resources>

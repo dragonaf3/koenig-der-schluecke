@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "König der Schlücke"
+rootProject.name = "koenig-der-schluecke"
 include(":app")

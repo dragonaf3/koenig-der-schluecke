@@ -114,5 +114,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonSpielBeitreten" />
 
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/startbildschirm" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

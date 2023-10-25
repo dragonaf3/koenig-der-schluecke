@@ -9,4 +9,6 @@
     <string name="spiel_beitreten_button">Spiel beitreten</string>
     <string name="scanne_hier_den_qr_code">Scanne hier den QR-Code:</string>
     <string name="zurueck_zum_hauptmenue">Zurück zum Hauptmenü</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

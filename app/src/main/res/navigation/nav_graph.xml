@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/mainActivity">
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.koenigderschluecke.MainActivity"
+        android:label="startbildschirm"
+        tools:layout="@layout/startbildschirm" />
+    <activity
+        android:id="@+id/spielBeitreten"
+        android:name="com.example.koenigderschluecke.SpielBeitreten"
+        android:label="SpielBeitreten"
+        tools:layout="@layout/spiel_beitreten"/>
+
+
+</navigation>

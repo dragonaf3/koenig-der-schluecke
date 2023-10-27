@@ -12,5 +12,14 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <!-- Enable fullscreen -->
+        <item name="android:windowFullscreen">true</item>
     </style>
+
+    <style name="Theme.KönigDerSchlückeOhneBox" parent="Theme.AppCompat.NoActionBar">
+        <!-- Weitere Stildefinitionen hier -->
+        <!-- Enable fullscreen -->
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
 </resources>

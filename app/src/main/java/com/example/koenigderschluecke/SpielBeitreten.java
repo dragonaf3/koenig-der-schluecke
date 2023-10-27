@@ -20,10 +20,10 @@ public class SpielBeitreten extends AppCompatActivity {
         setContentView(R.layout.spiel_beitreten); // Hier musst du das Layout für deine SpielBeitreten-Aktivität setzen
 
         // Finde den "Spiel beitreten"-Button in deinem Layout
-        Button zurueckZumHauptmeenueButton = findViewById(R.id.buttonZurueckZumHauptmenue);
+        Button zurueckZumHauptmenueButton = findViewById(R.id.buttonZurueckZumHauptmenue);
 
         // Füge einen OnClickListener hinzu, um auf Klicks auf den Button zu reagieren
-        zurueckZumHauptmeenueButton.setOnClickListener(new View.OnClickListener() {
+        zurueckZumHauptmenueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onZurueckZumHauptmenue(v);

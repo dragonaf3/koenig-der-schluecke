@@ -1,8 +1,6 @@
 package com.example.koenigderschluecke;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -40,13 +38,13 @@ public class MainActivity extends AppCompatActivity {
         beendenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBeenden(v);
+                onBeendenButtonClick(v);
             }
         });
     }
 
     // In der Methode, die aufgerufen wird, wenn der "Spiel beitreten"-Button geklickt wird
-    public void onSpielBeitretenButtonClick(View view) {
+    private void onSpielBeitretenButtonClick(View view) {
         // Erstelle einen Intent, um zur neuen Aktivität zu wechseln
         Intent intent = new Intent(this, SpielBeitreten.class); // Ersetze "ZielAktivitat" durch den Namen deiner Zielaktivität
 
@@ -59,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onBeenden(View view) {
+    private void onBeendenButtonClick(View view) {
         finish();
 
         finishAffinity();

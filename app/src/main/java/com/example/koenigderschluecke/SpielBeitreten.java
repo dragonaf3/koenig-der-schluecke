@@ -29,7 +29,7 @@ public class SpielBeitreten extends AppCompatActivity {
     }
 
     // In der Methode, die aufgerufen wird, wenn der "Spiel beitreten"-Button geklickt wird
-    public void onZurueckZumHauptmenue(View view) {
+    private void onZurueckZumHauptmenue(View view) {
         // Erstelle einen Intent, um zur neuen Aktivität zu wechseln
         Intent intent = new Intent(this, MainActivity.class); // Ersetze "ZielAktivitat" durch den Namen deiner Zielaktivität
 

@@ -34,6 +34,11 @@
             android:name=".SpielBeitreten"
             android:exported="false">
         </activity>
+
+        <activity
+            android:name=".Statistik"
+            android:exported="false">
+        </activity>
     </application>
 
 </manifest>

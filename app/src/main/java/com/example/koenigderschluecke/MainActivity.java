@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Finde den "Spiel beitreten"-Button in deinem Layout
         Button spielBeitretenButton = findViewById(R.id.buttonSpielBeitreten);
+        ImageButton statistikButton = findViewById(R.id.buttonStatistik);
         Button beendenButton = findViewById(R.id.buttonBeenden);
 
         // Füge einen OnClickListener hinzu, um auf Klicks auf den Button zu reagieren
@@ -25,6 +27,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 onSpielBeitretenButtonClick(v);
+            }
+        });
+
+        statistikButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onStatistikButtonClick(v);
             }
         });
 
@@ -42,6 +51,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SpielBeitreten.class); // Ersetze "ZielAktivitat" durch den Namen deiner Zielaktivität
 
         // Starte die neue Aktivität
+        startActivity(intent);
+    }
+
+    private void onStatistikButtonClick(View view) {
+        Intent intent = new Intent(this, Statistik.class);
         startActivity(intent);
     }
 

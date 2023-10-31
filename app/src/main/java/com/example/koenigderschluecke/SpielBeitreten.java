@@ -4,11 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 
 
@@ -20,7 +17,7 @@ public class SpielBeitreten extends AppCompatActivity {
         setContentView(R.layout.spiel_beitreten); // Hier musst du das Layout für deine SpielBeitreten-Aktivität setzen
 
         // Finde den "Spiel beitreten"-Button in deinem Layout
-        Button zurueckZumHauptmenueButton = findViewById(R.id.buttonZurueckZumHauptmenue);
+        Button zurueckZumHauptmenueButton = findViewById(R.id.buttonZurueckZumHauptmenueSpielBeitretenSeite);
 
         // Füge einen OnClickListener hinzu, um auf Klicks auf den Button zu reagieren
         zurueckZumHauptmenueButton.setOnClickListener(new View.OnClickListener() {

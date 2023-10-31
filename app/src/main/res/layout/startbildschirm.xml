@@ -14,9 +14,8 @@
         android:layout_height="60dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="45dp"
-        android:background="@drawable/round_button_background"
+        android:background="@drawable/einstellungen"
         android:contentDescription="@string/einstellungen_oeffnen"
-        android:src="@android:drawable/stat_sys_vp_phone_call"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -26,14 +25,13 @@
 
 
     <ImageButton
-        android:id="@+id/statistikButton"
+        android:id="@+id/buttonStatistik"
         android:layout_width="59dp"
         android:layout_height="60dp"
         android:layout_marginStart="45dp"
         android:layout_marginTop="50dp"
-        android:background="@drawable/round_button_background"
+        android:background="@drawable/statistik"
         android:contentDescription="@string/statistik_oeffnen"
-        android:src="@android:drawable/presence_busy"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -48,7 +46,7 @@
         android:layout_marginStart="45dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="45dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="25dp"
         android:contentDescription="@string/ueberschrift_koenig_der_schluecke"
         android:fontFamily="sans-serif-black"
         android:text="@string/koenig_der_schluecke"
@@ -59,14 +57,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/statistikButton"
+        app:layout_constraintTop_toBottomOf="@+id/buttonStatistik"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/bierImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@android:drawable/ic_delete"
+        android:layout_width="214dp"
+        android:layout_height="147dp"
+        android:contentDescription="@string/ein_bild_von_einem_bier"
+        android:src="@drawable/bier"
         app:layout_constraintBottom_toTopOf="@+id/buttonNeuesSpiel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -114,11 +113,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonSpielBeitreten" />
 
-    <FrameLayout
-        android:id="@+id/fragmentContainer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/startbildschirm" />
+    <ImageView
+        android:id="@+id/kreis_fuer_statistik"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonStatistik"
+        app:layout_constraintEnd_toEndOf="@+id/buttonStatistik"
+        app:layout_constraintStart_toStartOf="@+id/buttonStatistik"
+        app:layout_constraintTop_toTopOf="@+id/buttonStatistik"
+        app:srcCompat="@drawable/round_button_background" />
+
+    <ImageView
+        android:id="@+id/kreis_fuer_einstellungen"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="@id/buttonEinstellungen"
+        app:layout_constraintEnd_toEndOf="@id/buttonEinstellungen"
+        app:layout_constraintStart_toStartOf="@id/buttonEinstellungen"
+        app:layout_constraintTop_toTopOf="@id/buttonEinstellungen"
+        app:srcCompat="@drawable/round_button_background" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

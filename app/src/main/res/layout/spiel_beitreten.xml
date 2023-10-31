@@ -12,6 +12,7 @@
         android:layout_height="80dp"
         android:layout_marginTop="46dp"
         android:layout_marginBottom="50dp"
+        android:contentDescription="@string/zurueck_zum_hauptmen"
         android:text="@string/zurueck_zum_hauptmenue"
         android:textColor="@color/black"
         android:textSize="20sp"

@@ -39,6 +39,11 @@
             android:name=".Statistik"
             android:exported="false">
         </activity>
+
+        <activity
+            android:name=".Einstellungen"
+            android:exported="false">
+        </activity>
     </application>
 
 </manifest>

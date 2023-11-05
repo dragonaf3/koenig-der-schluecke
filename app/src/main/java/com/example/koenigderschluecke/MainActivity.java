@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.example.koenigderschluecke.spiel.Hauptspiel;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -16,10 +18,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.startbildschirm);
 
         // Finde den "Spiel beitreten"-Button in deinem Layout
+        Button neuesSpielButton = findViewById(R.id.buttonNeuesSpiel);
         Button spielBeitretenButton = findViewById(R.id.buttonSpielBeitreten);
         ImageButton statistikButton = findViewById(R.id.buttonStatistik);
         ImageButton einstellungenButton = findViewById(R.id.buttonEinstellungen);
         Button beendenButton = findViewById(R.id.buttonBeenden);
+
+        neuesSpielButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onNeuesSpielButtonClick(v);
+            }
+        });
 
         // Füge einen OnClickListener hinzu, um auf Klicks auf den Button zu reagieren
         spielBeitretenButton.setOnClickListener(new View.OnClickListener() {
@@ -49,6 +59,12 @@ public class MainActivity extends AppCompatActivity {
                 onBeendenButtonClick(v);
             }
         });
+    }
+
+    private void onNeuesSpielButtonClick(View v) {
+        Intent intent = new Intent(this, Hauptspiel.class);
+
+        startActivity(intent);
     }
 
     // In der Methode, die aufgerufen wird, wenn der "Spiel beitreten"-Button geklickt wird

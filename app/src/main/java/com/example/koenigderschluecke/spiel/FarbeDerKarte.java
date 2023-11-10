@@ -2,7 +2,7 @@ package com.example.koenigderschluecke.spiel;
 
 public enum FarbeDerKarte {
     HERZ,
-    Karo,
+    KARO,
     PIK,
     KREUZ
 }

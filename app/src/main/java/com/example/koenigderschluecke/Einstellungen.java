@@ -8,6 +8,8 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.koenigderschluecke.spiel.Hauptspiel;
+
 public class Einstellungen extends AppCompatActivity {
 
     @Override
@@ -18,28 +20,8 @@ public class Einstellungen extends AppCompatActivity {
         Button zurueckZumHauptmenueButton = findViewById(R.id.buttonZurueckZumHauptmenueEinstellungenSeite);
         ImageButton zumFeedbackButton = findViewById(R.id.imageButtonFeedback);
 
-        zurueckZumHauptmenueButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onZurueckZumHauptmenue(v);
-            }
-        });
+        zurueckZumHauptmenueButton.setOnClickListener(v -> startActivity(new Intent(this, Startbildschirm.class)));
 
-        zumFeedbackButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onZumFeedback(v);
-            }
-        });
-    }
-
-    private void onZurueckZumHauptmenue(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
-
-    private void onZumFeedback(View view) {
-        Intent intent = new Intent(this, Feedback.class);
-        startActivity(intent);
+        zumFeedbackButton.setOnClickListener(v -> startActivity(new Intent(this, Feedback.class)));
     }
 }

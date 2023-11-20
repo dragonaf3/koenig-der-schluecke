@@ -28,20 +28,10 @@ public class Feedback extends AppCompatActivity {
             String text = Objects.requireNonNull(editText.getText()).toString();
             sendEmail(text);
         });
-        zurueckZumHauptmenueButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onZurueckZumHauptmenue(v);
-            }
-        });
+
+        zurueckZumHauptmenueButton.setOnClickListener(v -> startActivity(new Intent(this, Startbildschirm.class)));
 
     }
-
-    private void onZurueckZumHauptmenue(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
-
 
     private void sendEmail(String text) {
         Intent emailIntent = new Intent(Intent.ACTION_SEND);

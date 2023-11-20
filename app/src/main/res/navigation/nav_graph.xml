@@ -7,7 +7,7 @@
 
     <activity
         android:id="@+id/mainActivity"
-        android:name="com.example.koenigderschluecke.MainActivity"
+        android:name="com.example.koenigderschluecke.Startbildschirm"
         android:label="startbildschirm"
         tools:layout="@layout/startbildschirm" />
     <activity

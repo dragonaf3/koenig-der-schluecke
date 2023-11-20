@@ -16,16 +16,6 @@ public class Statistik extends AppCompatActivity {
 
         Button zurueckZumHauptmenueButton = findViewById(R.id.buttonZurueckZumHauptmenueStatistikSeite);
 
-        zurueckZumHauptmenueButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onZurueckZumHauptmenue(v);
-            }
-        });
-    }
-
-    private void onZurueckZumHauptmenue(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        zurueckZumHauptmenueButton.setOnClickListener(v -> startActivity(new Intent(this, Startbildschirm.class)));
     }
 }

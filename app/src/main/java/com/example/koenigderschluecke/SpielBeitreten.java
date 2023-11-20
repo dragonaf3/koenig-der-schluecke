@@ -2,7 +2,6 @@ package com.example.koenigderschluecke;
 
 import android.Manifest;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -16,7 +15,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -41,21 +39,14 @@ public class SpielBeitreten extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.spiel_beitreten); // Hier musst du das Layout für deine SpielBeitreten-Aktivität setzen
+        setContentView(R.layout.spiel_beitreten);
 
         textureView = findViewById(R.id.camera_preview);
         textureView.setSurfaceTextureListener(surfaceTextureListener);
 
-        // Finde den "Spiel beitreten"-Button in deinem Layout
         Button zurueckZumHauptmenueButton = findViewById(R.id.buttonZurueckZumHauptmenueSpielBeitretenSeite);
 
-        // Füge einen OnClickListener hinzu, um auf Klicks auf den Button zu reagieren
-        zurueckZumHauptmenueButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onZurueckZumHauptmenue(v);
-            }
-        });
+        zurueckZumHauptmenueButton.setOnClickListener(v -> startActivity(new Intent(this, Startbildschirm.class)));
     }
 
     private final TextureView.SurfaceTextureListener surfaceTextureListener = new TextureView.SurfaceTextureListener() {
@@ -200,15 +191,6 @@ public class SpielBeitreten extends AppCompatActivity {
             cameraDevice.close();
             cameraDevice = null;
         }
-    }
-
-    // In der Methode, die aufgerufen wird, wenn der "Spiel beitreten"-Button geklickt wird
-    private void onZurueckZumHauptmenue(View view) {
-        // Erstelle einen Intent, um zur neuen Aktivität zu wechseln
-        Intent intent = new Intent(this, MainActivity.class); // Ersetze "ZielAktivitat" durch den Namen deiner Zielaktivität
-
-        // Starte die neue Aktivität
-        startActivity(intent);
     }
 
     @Override

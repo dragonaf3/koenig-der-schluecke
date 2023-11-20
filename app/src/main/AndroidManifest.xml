@@ -29,6 +29,10 @@
         </activity>
 
         <activity
+            android:name=".spiel.Hauptspiel">
+        </activity>
+
+        <activity
             android:name=".SpielBeitreten">
         </activity>
 

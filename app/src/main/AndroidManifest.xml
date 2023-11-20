@@ -20,8 +20,7 @@
 
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.KönigDerSchlückeOhneBox">
+            android:exported="true">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,14 +33,17 @@
         </activity>
 
         <activity
-            android:name=".Statistik"
-            android:exported="false">
+            android:name=".Statistik">
         </activity>
 
         <activity
-            android:name=".Einstellungen"
-            android:exported="false">
+            android:name=".Einstellungen">
         </activity>
+
+        <activity
+            android:name=".Feedback">
+        </activity>
+
     </application>
 
 </manifest>

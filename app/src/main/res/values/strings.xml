@@ -13,4 +13,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="ein_bild_von_einem_bier">Ein Bild von einem Bier</string>
     <string name="zurueck_zum_hauptmen">Zurück zum Hauptmenü</string>
+    <string name="feedbackSenden">Senden</string>
+    <string name="trage_hier_dein_feedback_ein">Trage hier dein Feedback ein:</string>
+    <string name="feedback_senden_button_ueberschrift">Feedback senden</string>
+    <string name="description_button_zum_senden_des_feedbacks">Button zum Senden des Feedbacks</string>
 </resources>

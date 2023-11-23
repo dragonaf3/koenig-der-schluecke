@@ -1,13 +1,13 @@
-package com.example.koenigderschluecke;
+package com.example.koenigderschluecke.view;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.koenigderschluecke.R;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.Objects;
@@ -19,11 +19,14 @@ public class Feedback extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.feedback);
 
+        //Erstellung der Elemente der Activity
         Button zurueckZumHauptmenueButton = findViewById(R.id.buttonZurueckZumHauptmenueFeedbackSeite);
 
         TextInputEditText editText = findViewById(R.id.feedbackInputText);
         Button sendEmailButton = findViewById(R.id.buttonFeedbackAbsenden);
 
+        //TODO: In den Controller?
+        //Definieren der OnClickListener
         sendEmailButton.setOnClickListener(view -> {
             String text = Objects.requireNonNull(editText.getText()).toString();
             sendEmail(text);
@@ -33,6 +36,7 @@ public class Feedback extends AppCompatActivity {
 
     }
 
+    //TODO: Gehört in den Controller
     private void sendEmail(String text) {
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
         emailIntent.setType("message/rfc822");

@@ -1,4 +1,4 @@
-package com.example.koenigderschluecke.spiel;
+package com.example.koenigderschluecke.view;
 
 import android.os.Bundle;
 import android.view.View;
@@ -8,7 +8,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.koenigderschluecke.R;
+import com.example.koenigderschluecke.spiel.KartenKreis;
 
+//TODO: Controller Auslagerung
 public class Hauptspiel extends AppCompatActivity {
 
     private KartenKreis kartenKreis;

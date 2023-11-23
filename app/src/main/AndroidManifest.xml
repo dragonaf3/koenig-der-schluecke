@@ -19,7 +19,7 @@
         tools:targetApi="31">
 
         <activity
-            android:name=".Startbildschirm"
+            android:name=".view.Startbildschirm"
             android:exported="true">
 
             <intent-filter>
@@ -29,23 +29,23 @@
         </activity>
 
         <activity
-            android:name=".spiel.Hauptspiel">
+            android:name=".view.Hauptspiel">
         </activity>
 
         <activity
-            android:name=".SpielBeitreten">
+            android:name=".view.SpielBeitreten">
         </activity>
 
         <activity
-            android:name=".Statistik">
+            android:name=".view.Statistik">
         </activity>
 
         <activity
-            android:name=".Einstellungen">
+            android:name=".view.Einstellungen">
         </activity>
 
         <activity
-            android:name=".Feedback">
+            android:name=".view.Feedback">
         </activity>
 
     </application>

@@ -7,12 +7,12 @@
 
     <activity
         android:id="@+id/mainActivity"
-        android:name="com.example.koenigderschluecke.Startbildschirm"
+        android:name="com.example.koenigderschluecke.view.Startbildschirm"
         android:label="startbildschirm"
         tools:layout="@layout/startbildschirm" />
     <activity
         android:id="@+id/spielBeitreten"
-        android:name="com.example.koenigderschluecke.SpielBeitreten"
+        android:name="com.example.koenigderschluecke.view.SpielBeitreten"
         android:label="SpielBeitreten"
         tools:layout="@layout/spiel_beitreten"/>
 

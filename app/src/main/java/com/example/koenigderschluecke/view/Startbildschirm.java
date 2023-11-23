@@ -1,14 +1,13 @@
-package com.example.koenigderschluecke;
+package com.example.koenigderschluecke.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.example.koenigderschluecke.spiel.Hauptspiel;
+import com.example.koenigderschluecke.R;
 
 public class Startbildschirm extends AppCompatActivity {
 
@@ -17,7 +16,7 @@ public class Startbildschirm extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.startbildschirm);
 
-        //Erstellung der Buttons
+        //Erstellung der Elemente der Activity
         Button neuesSpielButton = findViewById(R.id.buttonNeuesSpiel);
         Button spielBeitretenButton = findViewById(R.id.buttonSpielBeitreten);
         ImageButton statistikButton = findViewById(R.id.buttonStatistik);

@@ -1,4 +1,4 @@
-package com.example.koenigderschluecke;
+package com.example.koenigderschluecke.view;
 
 import android.Manifest;
 
@@ -20,13 +20,14 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.view.Surface;
 import android.view.TextureView;
-import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.koenigderschluecke.R;
+
 import java.util.Arrays;
 
-
+//TODO: Controller Auslagerung
 public class SpielBeitreten extends AppCompatActivity {
 
     private TextureView textureView;

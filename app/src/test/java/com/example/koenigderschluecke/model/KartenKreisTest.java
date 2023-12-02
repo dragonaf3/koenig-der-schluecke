@@ -1,6 +1,4 @@
-package com.example.koenigderschluecke.spiel;
-
-import static org.junit.Assert.*;
+package com.example.koenigderschluecke.model;
 
 import org.junit.Test;
 

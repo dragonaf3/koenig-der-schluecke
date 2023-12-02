@@ -1,6 +1,6 @@
-package com.example.koenigderschluecke.spiel;
+package com.example.koenigderschluecke.model;
 
-enum RangDerKarte {
+enum Kartenwert {
     ZWEI,
     DREI,
     VIER,

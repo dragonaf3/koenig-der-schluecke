@@ -1,6 +1,9 @@
 package com.example.koenigderschluecke.model;
 
-import org.junit.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 public class KarteTest {
 
@@ -8,19 +11,19 @@ public class KarteTest {
 
     @Test
     public void testGetFarbe() {
-        karte = new Karte(Kartensymbol.HERZ, Kartenwert.ACHT);
-        assertEquals(Kartensymbol.HERZ, karte.getFarbe());
+        karte = new KarteImpl(Kartenwert.ACHT, Kartensymbol.HERZ);
+        assertEquals(Kartensymbol.HERZ, karte.getSymbol());
     }
 
     @Test
     public void testGetRang() {
-        karte = new Karte(Kartensymbol.HERZ, Kartenwert.ACHT);
-        assertEquals(Kartenwert.ACHT, karte.getRang());
+        karte = new KarteImpl(Kartenwert.ACHT, Kartensymbol.HERZ);
+        assertEquals(Kartenwert.ACHT, karte.getWert());
     }
 
     @Test
     public void testToString() {
-        karte = new Karte(Kartensymbol.HERZ, Kartenwert.ACHT);
+        karte = new KarteImpl(Kartenwert.ACHT, Kartensymbol.HERZ);
         System.out.println(karte);
     }
 }

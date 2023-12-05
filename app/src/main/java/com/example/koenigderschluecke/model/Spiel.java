@@ -4,23 +4,9 @@ import java.util.List;
 
 /**
  * Dies ist eine Schnittstelle für ein Spiel.
- * Sie bietet Methoden zum Hinzufügen und Entfernen von Spielern, zum Abrufen von Spielinformationen und zum Durchführen von Spielaktionen.
+ * Sie definiert die Methoden, welche ein Spiel implementieren muss.
  */
 public interface Spiel {
-
-    /**
-     * Fügt einen neuen Spieler zum Spiel hinzu.
-     *
-     * @param spieler Der Spieler, der zum Spiel hinzugefügt wird.
-     */
-    void addSpieler(Spieler spieler);
-
-    /**
-     * Entfernt einen Spieler aus dem Spiel.
-     *
-     * @param spieler Der Spieler, der aus dem Spiel entfernt wird.
-     */
-    void entferneSpieler(Spieler spieler);
 
     /**
      * Gibt eine Liste aller Spieler im Spiel zurück.
@@ -30,46 +16,51 @@ public interface Spiel {
     List<Spieler> getSpielerListe();
 
     /**
-     * Gibt den aktuellen Spieler zurück.
+     * Gibt den Kartenstapel des Spiels zurück.
      *
-     * @return Der Spieler, der aktuell an der Reihe ist.
-     * @throws IllegalStateException wenn keine Spieler im Spiel sind.
+     * @return Eine Liste der Karten.
      */
-    public Spieler getAktuellerSpieler() throws IllegalStateException;
-
-    /**
-     * Holt die nächste Karte vom Stapel. Diese Methode verändert den Zustand
-     * des Kartenstapels, indem sie die oberste Karte entfernt.
-     *
-     * @return Die nächste Spielkarte vom Stapel.
-     * @throws KartenstapelLeerException Diese Ausnahme wird ausgelöst, wenn der Kartenstapel leer ist.
-     */
-    Karte holeNaechsteKarte() throws KartenstapelLeerException;
-
-    /**
-     * Wechselt zum nächsten Spieler in der Reihenfolge. Diese Methode aktualisiert
-     * die Information, welcher Spieler aktuell an der Reihe ist.
-     */
-    void wechsleZuNaechstemSpieler();
+    List<Karte> getKartenstapel();
 
     /**
      * Gibt die aktuelle Runde des Spiels zurück.
      *
-     * @return Die Nummer der aktuellen Runde.
+     * @return Die aktuelle Runde als Integer.
      */
     int getAktuelleRunde();
 
     /**
-     * Gibt eine Liste der verbleibenden Karten im Spiel zurück.
+     * Setzt die aktuelle Runde des Spiels.
      *
-     * @return Eine Liste der noch nicht gezogenen Karten.
+     * @param aktuelleRunde Die neue Runde als Integer.
      */
-    List<Karte> getVerbleibendeKarten();
+    void setAktuelleRunde(int aktuelleRunde);
 
     /**
-     * Gibt die Anzahl der bereits gezogenen Könige zurück.
+     * Gibt die Anzahl der gezogenen Könige zurück.
      *
-     * @return Die Anzahl der gezogenen Könige.
+     * @return Die Anzahl der gezogenen Könige als Integer.
      */
-    int getAnzahlGezogenerKoenige();
+    int getGezogeneKoenige();
+
+    /**
+     * Setzt die Anzahl der gezogenen Könige.
+     *
+     * @param gezogeneKoenige Die neue Anzahl der gezogenen Könige als Integer.
+     */
+    void setGezogeneKoenige(int gezogeneKoenige);
+
+    /**
+     * Gibt den Index des aktuellen Spielers zurück.
+     *
+     * @return Der Index des aktuellen Spielers als Integer.
+     */
+    int getAktuellerSpielerIndex();
+
+    /**
+     * Setzt den Index des aktuellen Spielers.
+     *
+     * @param aktuellerSpielerIndex Der neue Index des aktuellen Spielers als Integer.
+     */
+    void setAktuellerSpielerIndex(int aktuellerSpielerIndex);
 }

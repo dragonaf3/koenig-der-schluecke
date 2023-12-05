@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * Diese Klasse repräsentiert das Kings Cup Spiel.
- * Sie verwaltet die Spieler, den Kartenstapel und den Zustand des Spiels.
+ * Sie verwaltet die Spieler*innen, den Kartenstapel und den Zustand des Spiels.
  * <p>
  * Beim Erstellen einer Instanz dieser Klasse wird ein vollständiger Satz von Spielkarten
  * initialisiert und gemischt, und die Spielrunden sowie die gezogenen Könige werden
@@ -34,47 +34,13 @@ public class SpielImpl implements Spiel {
     }
 
     @Override
-    public void addSpieler(Spieler spieler) {
-        spielerListe.add(spieler);
-    }
-
-    @Override
-    public void entferneSpieler(Spieler spieler) {
-        spielerListe.remove(spieler);
-    }
-
-    @Override
     public List<Spieler> getSpielerListe() {
-        return new ArrayList<>(spielerListe);
+        return spielerListe;
     }
 
     @Override
-    public Spieler getAktuellerSpieler() throws IllegalStateException {
-        if (spielerListe.isEmpty()) {
-            throw new IllegalStateException("Es sind keine Spieler im Spiel.");
-        }
-        return spielerListe.get(aktuellerSpielerIndex);
-    }
-
-    @Override
-    public Karte holeNaechsteKarte() throws KartenstapelLeerException {
-        if (!kartenstapel.isEmpty()) {
-            return kartenstapel.remove(0); // Entfernt und gibt die oberste Karte zurück
-        } else {
-            throw new KartenstapelLeerException();
-        }
-    }
-
-    @Override
-    public void wechsleZuNaechstemSpieler() {
-        if (spielerListe.isEmpty()) {
-            throw new IllegalStateException("Es sind keine Spieler im Spiel.");
-        }
-
-        //Durch die Verwendung des modulo-Operators wird sichergestellt,
-        //dass die Spielerreihenfolge zyklisch ist,
-        //also nach dem letzten Spieler wieder beim ersten Spieler fortgesetzt wird.
-        aktuellerSpielerIndex = (aktuellerSpielerIndex + 1) % spielerListe.size();
+    public List<Karte> getKartenstapel() {
+        return kartenstapel;
     }
 
     @Override
@@ -83,13 +49,28 @@ public class SpielImpl implements Spiel {
     }
 
     @Override
-    public List<Karte> getVerbleibendeKarten() {
-        return new ArrayList<>(kartenstapel);
+    public void setAktuelleRunde(int aktuelleRunde) {
+        this.aktuelleRunde = aktuelleRunde;
     }
 
     @Override
-    public int getAnzahlGezogenerKoenige() {
+    public int getGezogeneKoenige() {
         return gezogeneKoenige;
+    }
+
+    @Override
+    public void setGezogeneKoenige(int gezogeneKoenige) {
+        this.gezogeneKoenige = gezogeneKoenige;
+    }
+
+    @Override
+    public int getAktuellerSpielerIndex() {
+        return aktuellerSpielerIndex;
+    }
+
+    @Override
+    public void setAktuellerSpielerIndex(int aktuellerSpielerIndex) {
+        this.aktuellerSpielerIndex = aktuellerSpielerIndex;
     }
 
     private List<Karte> initialisiereKartenstapel() {

@@ -30,7 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/gezogeneKarte" />
 
     <TextView
-        android:id="@+id/kartenImStapel"
+        android:id="@+id/aktuellerSpieler"
         android:layout_width="231dp"
         android:layout_height="86dp"
         android:layout_marginStart="90dp"

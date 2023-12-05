@@ -15,8 +15,10 @@ public interface SpielController {
 
     /**
      * Leitet die nächste Runde im Spiel ein.
+     *
+     * @return String Id des nächsten Spieler*in
      */
-    void naechsteRunde();
+    String naechsteRunde();
 
     /**
      * Zieht eine Karte aus dem Kartenstapel und wendet die entsprechenden Spielregeln an.

@@ -1,6 +1,6 @@
 package com.example.koenigderschluecke.model;
 
-enum Kartenwert {
+public enum Kartenwert {
     ZWEI,
     DREI,
     VIER,

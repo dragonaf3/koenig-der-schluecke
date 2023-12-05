@@ -1,5 +1,7 @@
 package com.example.koenigderschluecke.controller;
 
+import com.example.koenigderschluecke.model.Karte;
+import com.example.koenigderschluecke.model.Kartenwert;
 import com.example.koenigderschluecke.model.Spiel;
 import com.example.koenigderschluecke.model.SpielSingleton;
 
@@ -33,7 +35,7 @@ public class SpielControllerImpl implements SpielController {
     }
 
     @Override
-    public void naechsteRunde() {
+    public String naechsteRunde() {
         if (spiel.getSpielerListe().isEmpty()) {
             throw new IllegalStateException("Es sind keine Spieler*innen im Spiel.");
         }
@@ -42,16 +44,22 @@ public class SpielControllerImpl implements SpielController {
         //dass die Spielerreihenfolge zyklisch ist,
         //also nach dem letzten Spieler wieder beim ersten Spieler fortgesetzt wird.
         spiel.setAktuellerSpielerIndex((spiel.getAktuellerSpielerIndex() + 1) % spiel.getSpielerListe().size());
+        return String.valueOf(spiel.getAktuellerSpielerIndex());
     }
 
     @Override
     public String karteZiehen() throws KartenstapelLeerException {
 
         if (!spiel.getKartenstapel().isEmpty()) {
-            return spiel.getKartenstapel().remove(0).toString(); // Entfernt und gibt die oberste Karte zurück
+            Karte karte = spiel.getKartenstapel().remove(0);
+
+            if (karte.getWert() == Kartenwert.KOENIG) {
+                spiel.setGezogeneKoenige(spiel.getGezogeneKoenige() + 1);
+            }
+            return karte.toString();
+
         } else {
             throw new KartenstapelLeerException();
         }
-
     }
 }

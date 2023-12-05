@@ -11,23 +11,31 @@ import com.example.koenigderschluecke.R;
 import com.example.koenigderschluecke.controller.SpielController;
 import com.example.koenigderschluecke.controller.SpielControllerImpl;
 import com.example.koenigderschluecke.controller.KartenstapelLeerException;
+import com.example.koenigderschluecke.model.Spiel;
+import com.example.koenigderschluecke.model.SpielSingleton;
+import com.example.koenigderschluecke.network.BluetoothConnector;
+import com.example.koenigderschluecke.network.BluetoothConnectorImpl;
 
 //TODO: Fehlt vieles
 public class Hauptspiel extends AppCompatActivity {
 
     private TextView gezogeneKarteTextView;
-    private TextView kartenImStapelView;
+    private TextView kartenImStapelTextView;
+    private Spiel spiel;
     private SpielController spielController;
+    private BluetoothConnector bluetoothConnector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hauptspiel);
 
-        spielController = new SpielControllerImpl();
+        spiel = SpielSingleton.getSpielInstance();
+        spielController = new SpielControllerImpl(spiel);
+        bluetoothConnector = new BluetoothConnectorImpl(spiel);
 
         gezogeneKarteTextView = findViewById(R.id.gezogeneKarte);
-        kartenImStapelView = findViewById(R.id.kartenImStapel);
+        kartenImStapelTextView = findViewById(R.id.kartenImStapel);
 
         Button karteZiehenButton = findViewById(R.id.buttonKarteZiehen);
 

@@ -9,28 +9,9 @@ import com.example.koenigderschluecke.model.Spieler;
 public interface SpielController {
 
     /**
-     * Startet das Spiel.
+     * Methode die ueberprueft, ob das Spiel beendet ist.
      */
-    void starteSpiel();
-
-    /**
-     * Beendet das Spiel.
-     */
-    void beendeSpiel();
-
-    /**
-     * Fügt einen neuen Spieler zum Spiel hinzu.
-     *
-     * @param spieler Der hinzuzufügende Spieler.
-     */
-    void addSpieler(Spieler spieler);
-
-    /**
-     * Entfernt einen Spieler aus dem Spiel.
-     *
-     * @param spieler Der zu entfernende Spieler.
-     */
-    void entferneSpieler(Spieler spieler);
+    boolean spielIstBeendet();
 
     /**
      * Leitet die nächste Runde im Spiel ein.

@@ -1,8 +1,7 @@
 package com.example.koenigderschluecke.controller;
 
 import com.example.koenigderschluecke.model.Spiel;
-import com.example.koenigderschluecke.model.SpielImpl;
-import com.example.koenigderschluecke.model.Spieler;
+import com.example.koenigderschluecke.model.SpielSingleton;
 
 /**
  * Die Klasse SpielControllerImpl implementiert das Interface SpielController.
@@ -17,28 +16,20 @@ public class SpielControllerImpl implements SpielController {
      * Der Konstruktor der Klasse SpielControllerImpl.
      * Er initialisiert das Spiel mit einer neuen Instanz von SpielImpl.
      */
-    public SpielControllerImpl() {
-        this.spiel = new SpielImpl();
+    public SpielControllerImpl(Spiel spiel) {
+        this.spiel = spiel;
     }
 
     @Override
-    public void starteSpiel() {
+    public boolean spielIstBeendet() {
+        if (spiel.getGezogeneKoenige() == 4) {
+            return true;
+        }
 
-    }
-
-    @Override
-    public void beendeSpiel() {
-
-    }
-
-    @Override
-    public void addSpieler(Spieler spieler) {
-        spiel.getSpielerListe().add(spieler);
-    }
-
-    @Override
-    public void entferneSpieler(Spieler spieler) {
-        spiel.getSpielerListe().remove(spieler);
+        if (spiel.getKartenstapel().size() == 0) {
+            return true;
+        }
+        return false;
     }
 
     @Override

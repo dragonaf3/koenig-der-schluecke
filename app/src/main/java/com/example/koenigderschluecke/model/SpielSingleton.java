@@ -12,20 +12,27 @@ import java.util.List;
  * initialisiert und gemischt, und die Spielrunden sowie die gezogenen Könige werden
  * auf den Anfangszustand gesetzt.
  */
-public class SpielImpl implements Spiel {
-
+public class SpielSingleton implements Spiel {
+    private static Spiel instance;
     private List<Spieler> spielerListe;
     private List<Karte> kartenstapel;
     private int aktuelleRunde;
     private int gezogeneKoenige;
     private int aktuellerSpielerIndex;
 
+    public static Spiel getSpielInstance() {
+        if (SpielSingleton.instance == null) {
+            SpielSingleton.instance = new SpielSingleton();
+        }
+        return SpielSingleton.instance;
+    }
+
     /**
      * Konstruktor für das Kings Cup Spiel.
      * Initialisiert die Spielerliste, den Kartenstapel und setzt die aktuelle Runde
      * sowie die Anzahl der gezogenen Könige auf ihren Anfangswert.
      */
-    public SpielImpl() {
+    private SpielSingleton() {
         this.spielerListe = new ArrayList<>();
         this.kartenstapel = initialisiereKartenstapel();
         this.aktuelleRunde = 0;

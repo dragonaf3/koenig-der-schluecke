@@ -16,7 +16,7 @@ import com.example.koenigderschluecke.controller.KartenstapelLeerException;
 public class Hauptspiel extends AppCompatActivity {
 
     private TextView gezogeneKarteTextView;
-    private TextView kartenImStapel;
+    private TextView kartenImStapelView;
     private SpielController spielController;
 
     @Override
@@ -27,7 +27,7 @@ public class Hauptspiel extends AppCompatActivity {
         spielController = new SpielControllerImpl();
 
         gezogeneKarteTextView = findViewById(R.id.gezogeneKarte);
-        kartenImStapel = findViewById(R.id.kartenImStapel);
+        kartenImStapelView = findViewById(R.id.kartenImStapel);
 
         Button karteZiehenButton = findViewById(R.id.buttonKarteZiehen);
 

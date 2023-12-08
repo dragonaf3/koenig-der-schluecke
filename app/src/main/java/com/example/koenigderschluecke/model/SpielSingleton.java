@@ -20,6 +20,8 @@ public class SpielSingleton implements Spiel {
     private int gezogeneKoenige;
     private int aktuellerSpielerIndex;
 
+    private Karte aktuelleKarte;
+
     public static Spiel getSpielInstance() {
         if (SpielSingleton.instance == null) {
             SpielSingleton.instance = new SpielSingleton();
@@ -48,6 +50,16 @@ public class SpielSingleton implements Spiel {
     @Override
     public List<Karte> getKartenstapel() {
         return kartenstapel;
+    }
+
+    @Override
+    public Karte getAktuelleKarte() {
+        return aktuelleKarte;
+    }
+
+    @Override
+    public void setAktuelleKarte(Karte aktuelleKarte) {
+        this.aktuelleKarte = aktuelleKarte;
     }
 
     @Override

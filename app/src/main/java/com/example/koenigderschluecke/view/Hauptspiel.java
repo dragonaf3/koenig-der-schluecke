@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.koenigderschluecke.R;
 import com.example.koenigderschluecke.controller.SpielController;
 import com.example.koenigderschluecke.controller.SpielControllerImpl;
-import com.example.koenigderschluecke.controller.KartenstapelLeerException;
+import com.example.koenigderschluecke.exceptions.KartenstapelLeerException;
 import com.example.koenigderschluecke.model.Spiel;
 import com.example.koenigderschluecke.model.SpielSingleton;
 import com.example.koenigderschluecke.model.SpielerImpl;
@@ -23,7 +23,6 @@ public class Hauptspiel extends AppCompatActivity {
 
     private TextView gezogeneKarteTextView;
     private TextView aktuellerSpielerTextView;
-    private Spiel spiel;
     private SpielController spielController;
     private BluetoothConnector bluetoothConnector;
 
@@ -32,9 +31,8 @@ public class Hauptspiel extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hauptspiel);
 
-        spiel = SpielSingleton.getSpielInstance();
-        spielController = new SpielControllerImpl(spiel);
-        bluetoothConnector = new BluetoothConnectorImpl(spiel);
+        spielController = new SpielControllerImpl();
+        bluetoothConnector = new BluetoothConnectorImpl();
 
         gezogeneKarteTextView = findViewById(R.id.gezogeneKarte);
         aktuellerSpielerTextView = findViewById(R.id.aktuellerSpieler);
@@ -59,6 +57,10 @@ public class Hauptspiel extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void updateView() {
+
     }
 
     private void zurueckZumHauptmenue() {

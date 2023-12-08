@@ -23,6 +23,20 @@ public interface Spiel {
     List<Karte> getKartenstapel();
 
     /**
+     * Gibt die aktuelle Karte zurück.
+     *
+     * @return Die aktuelle Karte.
+     */
+    Karte getAktuelleKarte();
+
+    /**
+     * Setzt die aktuelle Karte.
+     *
+     * @param karte Die neue aktuelle Karte.
+     */
+    void setAktuelleKarte(Karte karte);
+
+    /**
      * Gibt die aktuelle Runde des Spiels zurück.
      *
      * @return Die aktuelle Runde als Integer.

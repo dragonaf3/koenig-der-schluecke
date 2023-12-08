@@ -1,5 +1,7 @@
 package com.example.koenigderschluecke.model;
 
+//TODO: Regelsets?
+
 /**
  * Dies ist eine Schnittstelle für eine Spielkarte.
  * Sie bietet Methoden zum Abrufen des Werts und des Symbols der Karte.

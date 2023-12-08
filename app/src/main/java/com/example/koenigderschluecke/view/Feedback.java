@@ -25,7 +25,6 @@ public class Feedback extends AppCompatActivity {
         TextInputEditText editText = findViewById(R.id.feedbackInputText);
         Button sendEmailButton = findViewById(R.id.buttonFeedbackAbsenden);
 
-        //TODO: In den Controller?
         //Definieren der OnClickListener
         sendEmailButton.setOnClickListener(view -> {
             String text = Objects.requireNonNull(editText.getText()).toString();
@@ -36,7 +35,7 @@ public class Feedback extends AppCompatActivity {
 
     }
 
-    //TODO: Gehört in den Controller
+    //Könnte theoretisch in einem separaten Controller, aber da das Projekt ziemlich klein ist, bleibt es hier.
     private void sendEmail(String text) {
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
         emailIntent.setType("message/rfc822");

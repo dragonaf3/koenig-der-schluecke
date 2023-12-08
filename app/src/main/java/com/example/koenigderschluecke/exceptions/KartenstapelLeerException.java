@@ -1,4 +1,4 @@
-package com.example.koenigderschluecke.controller;
+package com.example.koenigderschluecke.exceptions;
 
 /**
  * Diese Klasse repräsentiert eine Ausnahme, die ausgelöst wird, wenn der Kartenstapel leer ist.

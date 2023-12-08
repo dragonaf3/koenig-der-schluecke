@@ -1,6 +1,7 @@
 package com.example.koenigderschluecke.network;
 
 import com.example.koenigderschluecke.model.Spiel;
+import com.example.koenigderschluecke.model.SpielSingleton;
 import com.example.koenigderschluecke.model.Spieler;
 
 /**
@@ -9,8 +10,8 @@ import com.example.koenigderschluecke.model.Spieler;
 public class BluetoothConnectorImpl implements BluetoothConnector {
     private final Spiel spiel;
 
-    public BluetoothConnectorImpl(Spiel spiel) {
-        this.spiel = spiel;
+    public BluetoothConnectorImpl() {
+        this.spiel = SpielSingleton.getSpielInstance();
     }
 
     @Override

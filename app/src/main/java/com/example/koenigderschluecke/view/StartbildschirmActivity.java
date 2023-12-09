@@ -9,7 +9,7 @@ import android.widget.ImageButton;
 
 import com.example.koenigderschluecke.R;
 
-public class Startbildschirm extends AppCompatActivity {
+public class StartbildschirmActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,10 +24,10 @@ public class Startbildschirm extends AppCompatActivity {
         Button beendenButton = findViewById(R.id.buttonBeenden);
 
         //Definieren der OnClickListener
-        neuesSpielButton.setOnClickListener(v -> startActivity(new Intent(this, Hauptspiel.class)));
-        spielBeitretenButton.setOnClickListener(v -> startActivity(new Intent(this, SpielBeitreten.class)));
-        statistikButton.setOnClickListener(v -> startActivity(new Intent(this, Statistik.class)));
-        einstellungenButton.setOnClickListener(v -> startActivity(new Intent(this, Einstellungen.class)));
+        neuesSpielButton.setOnClickListener(v -> startActivity(new Intent(this, HauptspielActivity.class)));
+        spielBeitretenButton.setOnClickListener(v -> startActivity(new Intent(this, SpielBeitretenActivity.class)));
+        statistikButton.setOnClickListener(v -> startActivity(new Intent(this, StatistikActivity.class)));
+        einstellungenButton.setOnClickListener(v -> startActivity(new Intent(this, EinstellungenActivity.class)));
         beendenButton.setOnClickListener(v -> {
             finish();
             finishAffinity();

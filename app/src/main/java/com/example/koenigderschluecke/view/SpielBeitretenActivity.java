@@ -28,7 +28,7 @@ import com.example.koenigderschluecke.R;
 import java.util.Arrays;
 
 //TODO: Controller Auslagerung
-public class SpielBeitreten extends AppCompatActivity {
+public class SpielBeitretenActivity extends AppCompatActivity {
 
     private TextureView textureView;
     private CameraDevice cameraDevice;
@@ -47,7 +47,7 @@ public class SpielBeitreten extends AppCompatActivity {
 
         Button zurueckZumHauptmenueButton = findViewById(R.id.buttonZurueckZumHauptmenueSpielBeitretenSeite);
 
-        zurueckZumHauptmenueButton.setOnClickListener(v -> startActivity(new Intent(this, Startbildschirm.class)));
+        zurueckZumHauptmenueButton.setOnClickListener(v -> startActivity(new Intent(this, StartbildschirmActivity.class)));
     }
 
     private final TextureView.SurfaceTextureListener surfaceTextureListener = new TextureView.SurfaceTextureListener() {

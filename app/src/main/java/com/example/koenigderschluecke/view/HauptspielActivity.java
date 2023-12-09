@@ -12,14 +12,12 @@ import com.example.koenigderschluecke.R;
 import com.example.koenigderschluecke.controller.SpielController;
 import com.example.koenigderschluecke.controller.SpielControllerImpl;
 import com.example.koenigderschluecke.exceptions.KartenstapelLeerException;
-import com.example.koenigderschluecke.model.Spiel;
-import com.example.koenigderschluecke.model.SpielSingleton;
 import com.example.koenigderschluecke.model.SpielerImpl;
 import com.example.koenigderschluecke.network.BluetoothConnector;
 import com.example.koenigderschluecke.network.BluetoothConnectorImpl;
 
 //TODO: Fehlt vieles
-public class Hauptspiel extends AppCompatActivity {
+public class HauptspielActivity extends AppCompatActivity {
 
     private TextView gezogeneKarteTextView;
     private TextView aktuellerSpielerTextView;
@@ -64,7 +62,7 @@ public class Hauptspiel extends AppCompatActivity {
     }
 
     private void zurueckZumHauptmenue() {
-        startActivity(new Intent(this, Startbildschirm.class));
+        startActivity(new Intent(this, StartbildschirmActivity.class));
     }
 
 }

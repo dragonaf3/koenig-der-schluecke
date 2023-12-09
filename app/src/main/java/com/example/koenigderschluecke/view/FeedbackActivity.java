@@ -12,7 +12,7 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.Objects;
 
-public class Feedback extends AppCompatActivity {
+public class FeedbackActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class Feedback extends AppCompatActivity {
             sendEmail(text);
         });
 
-        zurueckZumHauptmenueButton.setOnClickListener(v -> startActivity(new Intent(this, Startbildschirm.class)));
+        zurueckZumHauptmenueButton.setOnClickListener(v -> startActivity(new Intent(this, StartbildschirmActivity.class)));
 
     }
 
@@ -46,7 +46,7 @@ public class Feedback extends AppCompatActivity {
         try {
             startActivity(Intent.createChooser(emailIntent, "Wählen Sie eine E-Mail-App aus..."));
         } catch (android.content.ActivityNotFoundException ex) {
-            Toast.makeText(Feedback.this, "Es sind keine E-Mail-Clients installiert.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(FeedbackActivity.this, "Es sind keine E-Mail-Clients installiert.", Toast.LENGTH_SHORT).show();
         }
     }
 }

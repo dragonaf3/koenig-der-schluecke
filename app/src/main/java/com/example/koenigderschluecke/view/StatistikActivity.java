@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.koenigderschluecke.R;
 
-public class Statistik extends AppCompatActivity {
+public class StatistikActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,6 @@ public class Statistik extends AppCompatActivity {
         Button zurueckZumHauptmenueButton = findViewById(R.id.buttonZurueckZumHauptmenueStatistikSeite);
 
         //Definieren der OnClickListener
-        zurueckZumHauptmenueButton.setOnClickListener(v -> startActivity(new Intent(this, Startbildschirm.class)));
+        zurueckZumHauptmenueButton.setOnClickListener(v -> startActivity(new Intent(this, StartbildschirmActivity.class)));
     }
 }

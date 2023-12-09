@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.koenigderschluecke.R;
 
-public class Einstellungen extends AppCompatActivity {
+public class EinstellungenActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +21,7 @@ public class Einstellungen extends AppCompatActivity {
         ImageButton zumFeedbackButton = findViewById(R.id.imageButtonFeedback);
 
         //Definieren der OnClickListener
-        zurueckZumHauptmenueButton.setOnClickListener(v -> startActivity(new Intent(this, Startbildschirm.class)));
-        zumFeedbackButton.setOnClickListener(v -> startActivity(new Intent(this, Feedback.class)));
+        zurueckZumHauptmenueButton.setOnClickListener(v -> startActivity(new Intent(this, StartbildschirmActivity.class)));
+        zumFeedbackButton.setOnClickListener(v -> startActivity(new Intent(this, FeedbackActivity.class)));
     }
 }

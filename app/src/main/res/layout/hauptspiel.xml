@@ -5,41 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/gezogeneKarte"
-        android:layout_width="165dp"
-        android:layout_height="63dp"
-        android:layout_marginStart="123dp"
-        android:layout_marginTop="334dp"
-        android:layout_marginEnd="123dp"
-        android:layout_marginBottom="334dp"
-        android:textSize="34sp"
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/buttonKarteZiehen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Karte Ziehen"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gezogeneKarte" />
-
-    <TextView
-        android:id="@+id/aktuellerSpieler"
-        android:layout_width="231dp"
-        android:layout_height="86dp"
-        android:layout_marginStart="90dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="90dp"
-        android:layout_marginBottom="180dp"
-        android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@+id/gezogeneKarte"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

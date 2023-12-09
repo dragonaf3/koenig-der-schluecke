@@ -17,4 +17,6 @@
     <string name="trage_hier_dein_feedback_ein">Trage hier dein Feedback ein:</string>
     <string name="feedback_senden_button_ueberschrift">Feedback senden</string>
     <string name="description_button_zum_senden_des_feedbacks">Button zum Senden des Feedbacks</string>
+    <string name="aktuelle_spieler_in">aktuelle Spieler*in</string>
+    <string name="bereits_gezogene_koenige">Bereits gezogene Könige:</string>
 </resources>

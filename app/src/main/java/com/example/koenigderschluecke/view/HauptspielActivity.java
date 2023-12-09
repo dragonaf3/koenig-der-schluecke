@@ -18,9 +18,6 @@ import com.example.koenigderschluecke.network.BluetoothConnectorImpl;
 
 //TODO: Fehlt vieles
 public class HauptspielActivity extends AppCompatActivity {
-
-    private TextView gezogeneKarteTextView;
-    private TextView aktuellerSpielerTextView;
     private SpielController spielController;
     private BluetoothConnector bluetoothConnector;
 
@@ -32,29 +29,17 @@ public class HauptspielActivity extends AppCompatActivity {
         spielController = new SpielControllerImpl();
         bluetoothConnector = new BluetoothConnectorImpl();
 
-        gezogeneKarteTextView = findViewById(R.id.gezogeneKarte);
-        aktuellerSpielerTextView = findViewById(R.id.aktuellerSpieler);
-
-        Button karteZiehenButton = findViewById(R.id.buttonKarteZiehen);
-
-        //Nur Testzweck erstmal
+        //Testzwecke
         bluetoothConnector.addSpieler(new SpielerImpl("Alex"));
         bluetoothConnector.addSpieler(new SpielerImpl("Eva"));
+        //Testzwecke
 
-        karteZiehenButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    if (spielController.spielIstBeendet()) {
-                        zurueckZumHauptmenue();
-                    }
-                    gezogeneKarteTextView.setText(spielController.karteZiehen());
-                    aktuellerSpielerTextView.setText(spielController.naechsteRunde());
-                } catch (KartenstapelLeerException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        });
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.fragment_container, new KartenkreisFragment())
+                    .commit();
+        }
+
     }
 
     public void updateView() {

@@ -7,8 +7,8 @@
 
     <TextView
         android:id="@+id/aktuellerSpieler"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="286dp"
+        android:layout_height="92dp"
         android:layout_marginTop="55dp"
         android:layout_marginBottom="35dp"
         android:contentDescription="@string/aktuelle_spieler_in"
@@ -18,31 +18,31 @@
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/koenigeBereitsGezogen"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
 
-    <EditText
+    <TextView
         android:id="@+id/gezogeneKoenigeTextNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
-        android:ems="10"
-        android:inputType="number"
+        android:contentDescription="@string/nummer_welche_die_gezogenen_koenige_darstellt"
+        android:text="0"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/kartenStapelView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/koenigeBereitsGezogen" />
+        app:layout_constraintTop_toBottomOf="@+id/koenigeBereitsGezogen"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/koenigeBereitsGezogen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
-        android:layout_marginBottom="23dp"
+        android:layout_marginBottom="5dp"
         android:text="@string/bereits_gezogene_koenige"
         android:textAlignment="center"
         android:textColor="@color/black"
@@ -51,4 +51,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aktuellerSpieler" />
+
+    <com.example.koenigderschluecke.view.KartenStapelView
+        android:id="@+id/kartenStapelView"
+        android:layout_width="378dp"
+        android:layout_height="345dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gezogeneKoenigeTextNumber" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -35,8 +35,11 @@ public class HauptspielActivity extends AppCompatActivity {
         //Testzwecke
 
         if (savedInstanceState == null) {
+            KartenkreisFragment fragment = new KartenkreisFragment();
+            fragment.setSpielController(spielController);
+
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.fragment_container, new KartenkreisFragment())
+                    .add(R.id.fragment_container, fragment)
                     .commit();
         }
 

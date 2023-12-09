@@ -10,7 +10,7 @@ public class SpielerImpl implements Spieler {
     /**
      * Konstruktor für die SpielerImpl-Klasse.
      *
-     * @param name Der Name des Spielers.
+     * @param name Der Name der Spieler*in.
      */
     public SpielerImpl(String name) {
         this.name = name;

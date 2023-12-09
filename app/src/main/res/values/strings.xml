@@ -19,4 +19,5 @@
     <string name="description_button_zum_senden_des_feedbacks">Button zum Senden des Feedbacks</string>
     <string name="aktuelle_spieler_in">aktuelle Spieler*in</string>
     <string name="bereits_gezogene_koenige">Bereits gezogene Könige:</string>
+    <string name="nummer_welche_die_gezogenen_koenige_darstellt">Nummer, welche die gezogenen Könige darstellt</string>
 </resources>

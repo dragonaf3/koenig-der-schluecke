@@ -19,10 +19,10 @@ public class KartenStapelView extends View {
 
     public KartenStapelView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        kartenBild = BitmapFactory.decodeResource(getResources(), R.drawable.bier);
+        kartenBild = BitmapFactory.decodeResource(getResources(), R.drawable.karterueckseite);
 
-        int gewuenschteBreite = 90; // Beispielsweise 100 Pixel
-        int gewuenschteHoehe = 140; // Beispielsweise 150 Pixel
+        int gewuenschteBreite = 150; // Beispielsweise 100 Pixel
+        int gewuenschteHoehe = 200; // Beispielsweise 150 Pixel
 
         kartenBild = Bitmap.createScaledBitmap(kartenBild, gewuenschteBreite, gewuenschteHoehe, false);
 

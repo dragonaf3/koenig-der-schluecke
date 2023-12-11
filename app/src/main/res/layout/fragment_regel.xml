@@ -7,10 +7,10 @@
 
     <TextView
         android:id="@+id/aktuellerSpieler"
-        tools:ignore="HardcodedText"
         android:layout_width="286dp"
         android:layout_height="92dp"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"
         android:contentDescription="@string/aktuelle_spieler_in"
         android:text="Platzhalter_aktueller_Spieler"
         android:textAlignment="center"
@@ -20,7 +20,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/amZug" />
+        app:layout_constraintTop_toBottomOf="@+id/amZug"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/amZug"
@@ -42,6 +43,7 @@
         android:id="@+id/buttonNaechsteRunde"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
         android:text="Nächste Runde"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,7 +54,10 @@
         android:id="@+id/ueberschriftGezogeneKarte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:text="@string/gezogene_karte"
+        android:textAlignment="center"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/imageViewKartenbild"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

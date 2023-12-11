@@ -1,15 +1,15 @@
 package com.example.koenigderschluecke.model;
 
 public class KarteImpl implements Karte {
-    private final Kartenwert wert;
+    private final RauschRitter wert;
     private final Kartensymbol symbol;
 
-    public KarteImpl(Kartenwert wert, Kartensymbol symbol) {
+    public KarteImpl(RauschRitter wert, Kartensymbol symbol) {
         this.wert = wert;
         this.symbol = symbol;
     }
     @Override
-    public Kartenwert getWert() {
+    public RauschRitter getWert() {
         return wert;
     }
 

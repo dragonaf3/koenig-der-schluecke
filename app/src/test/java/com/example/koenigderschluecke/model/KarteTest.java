@@ -11,19 +11,19 @@ public class KarteTest {
 
     @Test
     public void testGetFarbe() {
-        karte = new KarteImpl(Kartenwert.ACHT, Kartensymbol.HERZ);
+        karte = new KarteImpl(RauschRitter.ACHT, Kartensymbol.HERZ);
         assertEquals(Kartensymbol.HERZ, karte.getSymbol());
     }
 
     @Test
     public void testGetRang() {
-        karte = new KarteImpl(Kartenwert.ACHT, Kartensymbol.HERZ);
-        assertEquals(Kartenwert.ACHT, karte.getWert());
+        karte = new KarteImpl(RauschRitter.ACHT, Kartensymbol.HERZ);
+        assertEquals(RauschRitter.ACHT, karte.getWert());
     }
 
     @Test
     public void testToString() {
-        karte = new KarteImpl(Kartenwert.ACHT, Kartensymbol.HERZ);
+        karte = new KarteImpl(RauschRitter.ACHT, Kartensymbol.HERZ);
         System.out.println(karte);
     }
 }

@@ -2,7 +2,7 @@ package com.example.koenigderschluecke.controller;
 
 import com.example.koenigderschluecke.exceptions.KartenstapelLeerException;
 import com.example.koenigderschluecke.model.Karte;
-import com.example.koenigderschluecke.model.Kartenwert;
+import com.example.koenigderschluecke.model.RauschRitter;
 import com.example.koenigderschluecke.model.Spiel;
 import com.example.koenigderschluecke.model.SpielSingleton;
 
@@ -53,7 +53,7 @@ public class SpielControllerImpl implements SpielController {
         if (!spiel.getKartenstapel().isEmpty()) {
             Karte karte = spiel.getKartenstapel().remove(0);
 
-            if (karte.getWert() == Kartenwert.KOENIG) {
+            if (karte.getWert() == RauschRitter.KOENIG) {
                 spiel.setGezogeneKoenige(spiel.getGezogeneKoenige() + 1);
             }
             spiel.setAktuelleKarte(karte);

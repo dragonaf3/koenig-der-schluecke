@@ -95,7 +95,7 @@ public class SpielSingleton implements Spiel {
     private List<Karte> initialisiereKartenstapel() {
         List<Karte> stapel = new ArrayList<>();
         for (Kartensymbol symbol : Kartensymbol.values()) {
-            for (Kartenwert wert : Kartenwert.values()) {
+            for (RauschRitter wert : RauschRitter.values()) {
                 stapel.add(new KarteImpl(wert, symbol));
             }
         }

@@ -13,7 +13,7 @@ public interface Karte {
      *
      * @return String Dies gibt den Wert der Karte zurück.
      */
-    Kartenwert getWert();
+    RauschRitter getWert();
 
     /**
      * Diese Methode wird verwendet, um das Symbol der Karte zu erhalten.

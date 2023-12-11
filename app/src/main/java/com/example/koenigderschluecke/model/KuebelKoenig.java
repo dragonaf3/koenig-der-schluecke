@@ -1,6 +1,6 @@
 package com.example.koenigderschluecke.model;
 
-public enum KuebelKoenig {
+public enum KuebelKoenig implements RegelBeschreiber {
     EINS("Trinke einen Schluck."),
     ZWEI("Verteile zwei Schlücke."),
     DREI("Trinke drei Schlücke."),
@@ -22,6 +22,7 @@ public enum KuebelKoenig {
         this.beschreibung = beschreibung;
     }
 
+    @Override
     public String getBeschreibung() {
         return beschreibung;
     }

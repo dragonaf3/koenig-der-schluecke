@@ -22,4 +22,11 @@ public interface Karte {
      */
     Kartensymbol getSymbol();
 
+    /**
+     * Diese Methode wird verwendet, um die Regel der Karte zu erhalten.
+     *
+     * @return String Dies gibt die Regel der Karte zurück.
+     */
+    String getRegel();
+
 }

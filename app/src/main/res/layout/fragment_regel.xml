@@ -47,8 +47,7 @@
         android:text="Nächste Runde"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewKartenbild" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/ueberschriftGezogeneKarte"
@@ -68,10 +67,22 @@
         android:layout_width="187dp"
         android:layout_height="386dp"
         android:layout_marginTop="22dp"
-        android:layout_marginBottom="36dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonNaechsteRunde"
+        app:layout_constraintBottom_toTopOf="@+id/RegelZurKarte"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ueberschriftGezogeneKarte"
         app:srcCompat="@drawable/KarteRueckseite" />
+
+    <TextView
+        android:id="@+id/RegelZurKarte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="188dp"
+        android:layout_marginEnd="188dp"
+        android:layout_marginBottom="17dp"
+        android:text="Regel"
+        app:layout_constraintBottom_toTopOf="@+id/buttonNaechsteRunde"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewKartenbild" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,9 +18,14 @@ public interface PersistenzController {
     void ladeStatistik();
 
     /**
-     * Lädt die Statistik am Ende des Spiels.
+     * Lädt die Statistik am Ende des Spiels, wie viele Spiele insgesamt gespielt wurden.
      *
-     * @return Eine Zeichenkette, die die Statistik am Ende des Spiels darstellt.
+     * @return Anzahl der gespielten Spiele
      */
     String ladeSpielendeStatistik();
+
+    /**
+     * Resettet die Statistik.
+     */
+    void resetStatistik();
 }

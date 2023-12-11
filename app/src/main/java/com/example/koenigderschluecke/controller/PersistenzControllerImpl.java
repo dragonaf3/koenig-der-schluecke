@@ -64,4 +64,19 @@ public class PersistenzControllerImpl implements PersistenzController {
     public String ladeSpielendeStatistik() {
         return Integer.toString(anzahlGespielteSpiele);
     }
+
+    @Override
+    public void resetStatistik() {
+        anzahlGezogeneKarten = 0;
+        anzahlGespielteSpiele = 0;
+
+        try {
+            FileOutputStream fileOutputStream = context.openFileOutput(DATEINAME, Context.MODE_PRIVATE);
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream);
+            outputStreamWriter.write(anzahlGezogeneKarten + "\n" + anzahlGespielteSpiele + "\n");
+            outputStreamWriter.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

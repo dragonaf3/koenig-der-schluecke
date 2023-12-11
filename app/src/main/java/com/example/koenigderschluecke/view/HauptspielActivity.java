@@ -12,6 +12,7 @@ import com.example.koenigderschluecke.R;
 import com.example.koenigderschluecke.controller.SpielController;
 import com.example.koenigderschluecke.controller.SpielControllerImpl;
 import com.example.koenigderschluecke.exceptions.KartenstapelLeerException;
+import com.example.koenigderschluecke.model.Spiel;
 import com.example.koenigderschluecke.model.SpielerImpl;
 import com.example.koenigderschluecke.network.BluetoothConnector;
 import com.example.koenigderschluecke.network.BluetoothConnectorImpl;
@@ -50,8 +51,40 @@ public class HauptspielActivity extends AppCompatActivity {
 
     }
 
-    public void updateView() {
+    public void naechsteRunde() {
+        if (spielController.spielIstBeendet()) {
+            wechselZuSpielendeFragment();
+        } else {
+            wechselZuKartenkreisFragment();
+        }
+    }
 
+    public void karteGezogen() {
+        wechselZuRegelFragment();
+    }
+
+    private void wechselZuKartenkreisFragment() {
+        KartenkreisFragment kartenkreisFragment = new KartenkreisFragment();
+        kartenkreisFragment.setSpielController(spielController);
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, kartenkreisFragment)
+                .commit();
+
+    }
+
+    private void wechselZuSpielendeFragment() {
+        //TODO: SpielendeFragment fehlt
+
+    }
+
+    private void wechselZuRegelFragment() {
+        RegelFragment regelFragment = new RegelFragment();
+        regelFragment.setSpielController(spielController);
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, regelFragment)
+                .commit();
     }
 
     private void zurueckZumHauptmenue() {

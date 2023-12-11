@@ -47,7 +47,7 @@ public class RegelFragment extends Fragment {
     private Bitmap setzeKartenbild() {
         switch (spielController.getAktuelleKarte()) {
             case "herzzwei" -> {
-                return BitmapFactory.decodeResource(getResources(), R.drawable.herz2);
+                return BitmapFactory.decodeResource(getResources(), R.drawable.herzzwei);
             }
             case "herzdrei" -> {
                 return BitmapFactory.decodeResource(getResources(), R.drawable.herzdrei);

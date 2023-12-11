@@ -22,4 +22,5 @@
     <string name="nummer_welche_die_gezogenen_koenige_darstellt">Nummer, welche die gezogenen Könige darstellt</string>
     <string name="gerade_am_zug">Gerade am Zug:</string>
     <string name="karte_ziehen">Karte ziehen</string>
+    <string name="gezogene_karte">Gezogene Karte:</string>
 </resources>

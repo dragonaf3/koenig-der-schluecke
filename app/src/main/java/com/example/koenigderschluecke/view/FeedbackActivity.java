@@ -17,7 +17,7 @@ public class FeedbackActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.feedback);
+        setContentView(R.layout.activity_feedback);
 
         //Erstellung der Elemente der Activity
         Button zurueckZumHauptmenueButton = findViewById(R.id.buttonZurueckZumHauptmenueFeedbackSeite);

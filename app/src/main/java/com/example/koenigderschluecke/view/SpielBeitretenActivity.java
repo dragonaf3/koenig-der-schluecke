@@ -40,7 +40,7 @@ public class SpielBeitretenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.spiel_beitreten);
+        setContentView(R.layout.activity_spiel_beitreten);
 
         textureView = findViewById(R.id.camera_preview);
         textureView.setSurfaceTextureListener(surfaceTextureListener);

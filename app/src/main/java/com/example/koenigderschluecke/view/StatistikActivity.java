@@ -13,7 +13,7 @@ public class StatistikActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.statistik);
+        setContentView(R.layout.activity_statistik);
 
         //Erstellung der Elemente der Activity
         Button zurueckZumHauptmenueButton = findViewById(R.id.buttonZurueckZumHauptmenueStatistikSeite);

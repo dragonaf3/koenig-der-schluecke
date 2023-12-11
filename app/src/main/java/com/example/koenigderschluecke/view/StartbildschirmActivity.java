@@ -14,7 +14,7 @@ public class StartbildschirmActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.startbildschirm);
+        setContentView(R.layout.activity_startbildschirm);
 
         //Erstellung der Elemente der Activity
         Button neuesSpielButton = findViewById(R.id.buttonNeuesSpiel);

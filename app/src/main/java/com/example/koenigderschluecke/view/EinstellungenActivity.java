@@ -14,7 +14,7 @@ public class EinstellungenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.einstellungen);
+        setContentView(R.layout.activity_einstellungen);
 
         //Erstellung der Elemente der Activity
         Button zurueckZumHauptmenueButton = findViewById(R.id.buttonZurueckZumHauptmenueSpielendeFragmentSeite);

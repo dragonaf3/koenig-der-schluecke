@@ -46,11 +46,11 @@ public interface SpielController {
     String getNameAktuellerSpieler();
 
     /**
-     * Methode, die die aktuelle Karte zurückgibt.
+     * Methode, die die aktuelle Karte als String zurückgibt.
      *
-     * @return Karte Die aktuelle Karte.
+     * @return String Die aktuelle Karte.
      */
-    Karte getAktuelleKarte();
+    String getAktuelleKarte();
 
     /**
      * Methode, die die Regel der aktuellen Karte zurückgibt.

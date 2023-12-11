@@ -71,8 +71,8 @@ public class SpielControllerImpl implements SpielController {
     }
 
     @Override
-    public Karte getAktuelleKarte() {
-        return spiel.getAktuelleKarte();
+    public String getAktuelleKarte() {
+        return spiel.getAktuelleKarte().getSymbol().toString().toLowerCase() + spiel.getAktuelleKarte().getWert().toString().toLowerCase();
     }
 
     //TODO: Regel Mechanik muss noch implementiert werden!

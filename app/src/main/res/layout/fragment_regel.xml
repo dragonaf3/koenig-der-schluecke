@@ -64,23 +64,26 @@
 
     <ImageView
         android:id="@+id/imageViewKartenbild"
-        android:layout_width="187dp"
-        android:layout_height="386dp"
+        android:layout_width="212dp"
+        android:layout_height="298dp"
         android:layout_marginTop="22dp"
-        app:layout_constraintBottom_toTopOf="@+id/RegelZurKarte"
+        app:layout_constraintBottom_toTopOf="@+id/regelZurKarte"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ueberschriftGezogeneKarte"
-        app:srcCompat="@drawable/KarteRueckseite" />
+        app:srcCompat="@drawable/karterueckseite" />
 
     <TextView
-        android:id="@+id/RegelZurKarte"
+        android:id="@+id/regelZurKarte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="188dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="188dp"
         android:layout_marginBottom="17dp"
-        android:text="Regel"
+        android:text="PLATZHALTER_REGEL"
+        android:textAlignment="center"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/buttonNaechsteRunde"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

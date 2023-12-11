@@ -77,4 +77,11 @@ public interface Spiel {
      * @param aktuellerSpielerIndex Der neue Index des aktuellen Spielers als Integer.
      */
     void setAktuellerSpielerIndex(int aktuellerSpielerIndex);
+
+    /**
+     * Initialisiert den Kartenstapel mit dem gewählten RegelSet.
+     *
+     * @throws IllegalArgumentException Wenn das RegelSet nicht existiert.
+     */
+    void initialisiereKartenstapelMitBestimmtenRegelSet(String regelSet) throws IllegalArgumentException;
 }

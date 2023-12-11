@@ -26,8 +26,13 @@ public class HauptspielActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hauptspiel);
 
-        spielController = new SpielControllerImpl();
-        bluetoothConnector = new BluetoothConnectorImpl();
+        //Test Regelset
+        spielController = new SpielControllerImpl("RauschRitter");
+        try {
+            bluetoothConnector = new BluetoothConnectorImpl();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
         //Testzwecke
         bluetoothConnector.addSpieler(new SpielerImpl("Alex"));

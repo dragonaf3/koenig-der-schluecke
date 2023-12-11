@@ -10,8 +10,8 @@ import com.example.koenigderschluecke.model.Spieler;
 public class BluetoothConnectorImpl implements BluetoothConnector {
     private final Spiel spiel;
 
-    public BluetoothConnectorImpl() {
-        this.spiel = SpielSingleton.getSpielInstance();
+    public BluetoothConnectorImpl() throws Exception {
+        this.spiel = SpielSingleton.getInstanceOhneErstellen();
     }
 
     @Override

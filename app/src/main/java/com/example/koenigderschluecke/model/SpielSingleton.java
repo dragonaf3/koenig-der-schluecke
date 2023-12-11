@@ -27,10 +27,24 @@ public class SpielSingleton implements Spiel {
      *
      * @return Eine Instanz des Spiels.
      */
-    public static Spiel getSpielInstance() {
+    public static Spiel getSpielInstance(String regelSet) {
         if (SpielSingleton.instance == null) {
-            SpielSingleton.instance = new SpielSingleton();
+            SpielSingleton.instance = new SpielSingleton(regelSet);
         }
+        return SpielSingleton.instance;
+    }
+
+    /**
+     * Diese Methode liefert eine Instanz des Spiels zurück. Ohne eine neue zu erstellen.
+     *
+     * @return Eine Instanz des Spiels.
+     * @throws Exception Wenn keine Instanz existiert.
+     */
+    public static Spiel getInstanceOhneErstellen() throws Exception {
+        if (SpielSingleton.instance == null) {
+            throw new Exception();
+        }
+
         return SpielSingleton.instance;
     }
 
@@ -39,12 +53,12 @@ public class SpielSingleton implements Spiel {
      * Initialisiert die Spielerliste, den Kartenstapel und setzt die aktuelle Runde
      * sowie die Anzahl der gezogenen Könige auf ihren Anfangswert.
      */
-    private SpielSingleton() {
+    private SpielSingleton(String regelSet) {
         this.spielerListe = new ArrayList<>();
-        this.kartenstapel = initialisiereKartenstapel();
         this.aktuelleRunde = 0;
         this.gezogeneKoenige = 0;
         this.aktuellerSpielerIndex = 0;
+        initialisiereKartenstapelMitBestimmtenRegelSet(regelSet);
     }
 
     @Override
@@ -97,10 +111,43 @@ public class SpielSingleton implements Spiel {
         this.aktuellerSpielerIndex = aktuellerSpielerIndex;
     }
 
-    private List<Karte> initialisiereKartenstapel() {
+    @Override
+    public void initialisiereKartenstapelMitBestimmtenRegelSet(String regelSet) throws IllegalArgumentException{
+        switch (regelSet) {
+            case "RauschRitter" -> this.kartenstapel = initialisiereKartenstapelRauschRitter();
+            case "Hopfenhacker" -> this.kartenstapel = initialisiereKartenstapelHopfenhacker();
+            case "KuebelKoenig" -> this.kartenstapel = initialisiereKartenstapelKuebelKoenig();
+            default -> throw new IllegalArgumentException("Regelset nicht gefunden.");
+        }
+
+    }
+
+    private List<Karte> initialisiereKartenstapelRauschRitter() {
         List<Karte> stapel = new ArrayList<>();
         for (Kartensymbol symbol : Kartensymbol.values()) {
             for (RauschRitter wert : RauschRitter.values()) {
+                stapel.add(new KarteImpl(wert, symbol));
+            }
+        }
+        Collections.shuffle(stapel); // Mischen des Kartenstapels
+        return stapel;
+    }
+
+    private List<Karte> initialisiereKartenstapelHopfenhacker() {
+        List<Karte> stapel = new ArrayList<>();
+        for (Kartensymbol symbol : Kartensymbol.values()) {
+            for (Hopfenhacker wert : Hopfenhacker.values()) {
+                stapel.add(new KarteImpl(wert, symbol));
+            }
+        }
+        Collections.shuffle(stapel); // Mischen des Kartenstapels
+        return stapel;
+    }
+
+    private List<Karte> initialisiereKartenstapelKuebelKoenig() {
+        List<Karte> stapel = new ArrayList<>();
+        for (Kartensymbol symbol : Kartensymbol.values()) {
+            for (KuebelKoenig wert : KuebelKoenig.values()) {
                 stapel.add(new KarteImpl(wert, symbol));
             }
         }

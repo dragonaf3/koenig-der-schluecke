@@ -25,10 +25,9 @@ public class SpielSingleton implements Spiel {
      * Diese Methode liefert eine Instanz des Spiels zurück. Wenn noch keine Instanz existiert,
      * wird eine neue erstellt.
      *
-     * @param regelset Das Regelset, das für das Spiel verwendet werden soll.
      * @return Eine Instanz des Spiels.
      */
-    public static <T extends Enum<T>> Spiel getSpielInstance(T regelset) {
+    public static Spiel getSpielInstance() {
         if (SpielSingleton.instance == null) {
             SpielSingleton.instance = new SpielSingleton();
         }

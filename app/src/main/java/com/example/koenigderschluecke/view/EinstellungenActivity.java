@@ -17,7 +17,7 @@ public class EinstellungenActivity extends AppCompatActivity {
         setContentView(R.layout.einstellungen);
 
         //Erstellung der Elemente der Activity
-        Button zurueckZumHauptmenueButton = findViewById(R.id.buttonZurueckZumHauptmenueEinstellungenSeite);
+        Button zurueckZumHauptmenueButton = findViewById(R.id.buttonZurueckZumHauptmenueSpielendeFragmentSeite);
         ImageButton zumFeedbackButton = findViewById(R.id.imageButtonFeedback);
 
         //Definieren der OnClickListener

@@ -37,18 +37,18 @@ public interface Spiel {
     void setAktuelleKarte(Karte karte);
 
     /**
-     * Gibt die aktuelle Runde des Spiels zurück.
+     * Gibt die Anzahl der gezogenen Karten zurück.
      *
-     * @return Die aktuelle Runde als Integer.
+     * @return Die Anzahl der gezogenen Karten als Integer.
      */
-    int getAktuelleRunde();
+    int getAnzahlGezogenerKarten();
 
     /**
-     * Setzt die aktuelle Runde des Spiels.
+     * Setzt die Anzahl der gezogenen Karten.
      *
-     * @param aktuelleRunde Die neue Runde als Integer.
+     * @param anzahlGezogenerKarten Die neue Anzahl der gezogenen Karten als Integer.
      */
-    void setAktuelleRunde(int aktuelleRunde);
+    void setAnzahlGezogenerKarten(int anzahlGezogenerKarten);
 
     /**
      * Gibt die Anzahl der gezogenen Könige zurück.

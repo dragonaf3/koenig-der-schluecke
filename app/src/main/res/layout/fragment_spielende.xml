@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/buttonZurueckZumHauptmenueEinstellungenSeite"
+        android:id="@+id/buttonZurueckZumHauptmenueSpielendeFragmentSeite"
         android:layout_width="170dp"
         android:layout_height="60dp"
         android:contentDescription="@string/zurueck_zum_hauptmen"
@@ -140,7 +140,7 @@
         android:layout_height="263dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="13dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonZurueckZumHauptmenueEinstellungenSeite"
+        app:layout_constraintBottom_toTopOf="@+id/buttonZurueckZumHauptmenueSpielendeFragmentSeite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"

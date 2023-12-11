@@ -54,7 +54,9 @@ public class SpielControllerImpl implements SpielController {
 
         if (!spiel.getKartenstapel().isEmpty()) {
             Karte karte = spiel.getKartenstapel().remove(0);
+            spiel.setAnzahlGezogenerKarten(spiel.getAnzahlGezogenerKarten() + 1);
 
+            //TODO: ändern
             if (karte.getWert() == RauschRitter.KOENIG) {
                 spiel.setGezogeneKoenige(spiel.getGezogeneKoenige() + 1);
             }
@@ -86,9 +88,18 @@ public class SpielControllerImpl implements SpielController {
             throw new IllegalStateException("Es sind keine Spieler*innen im Spiel.");
         }
 
-        //Durch die Verwendung des modulo-Operators wird sichergestellt,
-        //dass die Spielerreihenfolge zyklisch ist,
-        //also nach dem letzten Spieler wieder beim ersten Spieler fortgesetzt wird.
-        spiel.setAktuellerSpielerIndex((spiel.getAktuellerSpielerIndex() + 1) % spiel.getSpielerListe().size());
+        if (!spielIstBeendet()) {
+            //Durch die Verwendung des modulo-Operators wird sichergestellt,
+            //dass die Spielerreihenfolge zyklisch ist,
+            //also nach dem letzten Spieler wieder beim ersten Spieler fortgesetzt wird.
+            spiel.setAktuellerSpielerIndex((spiel.getAktuellerSpielerIndex() + 1) % spiel.getSpielerListe().size());
+        }
+
+        //tu nichts
+    }
+
+    @Override
+    public int getAnzahlGezogenerKarten() {
+        return spiel.getAnzahlGezogenerKarten();
     }
 }

@@ -73,8 +73,17 @@ public class HauptspielActivity extends AppCompatActivity {
 
     }
 
+    public void zurueckZumHauptmenue() {
+        startActivity(new Intent(this, StartbildschirmActivity.class));
+    }
+
     private void wechselZuSpielendeFragment() {
-        //TODO: SpielendeFragment fehlt
+        SpielendeFragment spielendeFragment = new SpielendeFragment();
+        spielendeFragment.setSpielController(spielController);
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, spielendeFragment)
+                .commit();
 
     }
 
@@ -85,10 +94,6 @@ public class HauptspielActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, regelFragment)
                 .commit();
-    }
-
-    private void zurueckZumHauptmenue() {
-        startActivity(new Intent(this, StartbildschirmActivity.class));
     }
 
 }

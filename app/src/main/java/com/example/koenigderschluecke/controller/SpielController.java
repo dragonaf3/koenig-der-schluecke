@@ -65,4 +65,11 @@ public interface SpielController {
      */
     void naechsteRunde();
 
+    /**
+     * Gibt die Anzahl der gezogenen Karten zurück.
+     *
+     * @return int Anzahl der gezogenen Karten.
+     */
+    int getAnzahlGezogenerKarten();
+
 }

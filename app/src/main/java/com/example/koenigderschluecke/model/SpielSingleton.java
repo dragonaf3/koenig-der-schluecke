@@ -16,7 +16,7 @@ public class SpielSingleton implements Spiel {
     private static Spiel instance;
     private List<Spieler> spielerListe;
     private List<Karte> kartenstapel;
-    private int aktuelleRunde;
+    private int anzahlGezogenerKarten;
     private int gezogeneKoenige;
     private int aktuellerSpielerIndex;
     private Karte aktuelleKarte;
@@ -55,7 +55,7 @@ public class SpielSingleton implements Spiel {
      */
     private SpielSingleton(String regelSet) {
         this.spielerListe = new ArrayList<>();
-        this.aktuelleRunde = 0;
+        this.anzahlGezogenerKarten = 0;
         this.gezogeneKoenige = 0;
         this.aktuellerSpielerIndex = 0;
         initialisiereKartenstapelMitBestimmtenRegelSet(regelSet);
@@ -82,13 +82,13 @@ public class SpielSingleton implements Spiel {
     }
 
     @Override
-    public int getAktuelleRunde() {
-        return aktuelleRunde;
+    public int getAnzahlGezogenerKarten() {
+        return anzahlGezogenerKarten;
     }
 
     @Override
-    public void setAktuelleRunde(int aktuelleRunde) {
-        this.aktuelleRunde = aktuelleRunde;
+    public void setAnzahlGezogenerKarten(int aktuelleRunde) {
+        this.anzahlGezogenerKarten = aktuelleRunde;
     }
 
     @Override

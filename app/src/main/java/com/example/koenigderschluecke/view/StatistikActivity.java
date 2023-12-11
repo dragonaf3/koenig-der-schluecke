@@ -20,5 +20,7 @@ public class StatistikActivity extends AppCompatActivity {
 
         //Definieren der OnClickListener
         zurueckZumHauptmenueButton.setOnClickListener(v -> startActivity(new Intent(this, StartbildschirmActivity.class)));
+
+        //TODO: Persistenz hier einfügen
     }
 }

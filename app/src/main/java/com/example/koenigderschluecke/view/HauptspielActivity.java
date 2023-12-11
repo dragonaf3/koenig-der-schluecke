@@ -6,6 +6,8 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.koenigderschluecke.R;
+import com.example.koenigderschluecke.controller.PersistenzController;
+import com.example.koenigderschluecke.controller.PersistenzControllerImpl;
 import com.example.koenigderschluecke.controller.SpielController;
 import com.example.koenigderschluecke.controller.SpielControllerImpl;
 import com.example.koenigderschluecke.model.SpielerImpl;
@@ -16,12 +18,14 @@ import com.example.koenigderschluecke.network.BluetoothConnectorImpl;
 public class HauptspielActivity extends AppCompatActivity {
     private SpielController spielController;
     private BluetoothConnector bluetoothConnector;
+    private PersistenzController persistenzController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hauptspiel);
 
+        persistenzController = new PersistenzControllerImpl(this);
         //Test Regelset
         spielController = new SpielControllerImpl("RauschRitter");
         try {
@@ -75,6 +79,7 @@ public class HauptspielActivity extends AppCompatActivity {
     private void wechselZuSpielendeFragment() {
         SpielendeFragment spielendeFragment = new SpielendeFragment();
         spielendeFragment.setSpielController(spielController);
+        spielendeFragment.setPersistenzController(persistenzController);
 
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, spielendeFragment)

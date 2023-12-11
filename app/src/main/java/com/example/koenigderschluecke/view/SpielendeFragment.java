@@ -11,13 +11,19 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.example.koenigderschluecke.R;
+import com.example.koenigderschluecke.controller.PersistenzController;
 import com.example.koenigderschluecke.controller.SpielController;
 
 public class SpielendeFragment extends Fragment {
     private SpielController spielController;
+    private PersistenzController persistenzController;
 
     public void setSpielController(SpielController spielController) {
         this.spielController = spielController;
+    }
+
+    public void setPersistenzController(PersistenzController persistenzController) {
+        this.persistenzController = persistenzController;
     }
 
     @Override
@@ -31,8 +37,9 @@ public class SpielendeFragment extends Fragment {
 
         Button zurueckZumHauptmenueButton = view.findViewById(R.id.buttonZurueckZumHauptmenueSpielendeFragmentSeite);
 
-        //TODO: Persi Controller
-        anzahlBeendeteSpieleGesamtTextView.setText("TODO");
+        persistenzController.speichereStatistik(spielController.getAnzahlGezogenerKarten());
+
+        anzahlBeendeteSpieleGesamtTextView.setText(persistenzController.ladeSpielendeStatistik());
         nameSpielerKoenigGezogenTextView.setText(spielController.getNameAktuellerSpieler());
         //TODO: Direkt zu einem String returnen?
         anzahlGezogenerKartenTextView.setText(Integer.toString(spielController.getAnzahlGezogenerKarten()));

@@ -55,6 +55,157 @@ public class RegelFragment extends Fragment {
             case "herzvier" -> {
                 return BitmapFactory.decodeResource(getResources(), R.drawable.herzvier);
             }
+            case "herzfuenf" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.herzfuenf);
+            }
+            case "herzsechs" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.herzsechs);
+            }
+            case "herzsieben" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.herzsieben);
+            }
+            case "herzacht" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.herzacht);
+            }
+            case "herzneun" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.herzneun);
+            }
+            case "herzzehn" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.herzzehn);
+            }
+            case "herzbube" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.herzbube);
+            }
+            case "herzdame" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.herzdame);
+            }
+            case "herzkoenig" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.herzkoenig);
+            }
+            case "herzass" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.herzass);
+            }
+            case "karozwei" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.karozwei);
+            }
+            case "karodrei" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.karodrei);
+            }
+            case "karovier" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.karovier);
+            }
+            case "karofuenf" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.karofuenf);
+            }
+            case "karosechs" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.karosechs);
+            }
+            case "karosieben" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.karosieben);
+            }
+            case "karoacht" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.karoacht);
+            }
+            case "karoneun" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.karoneun);
+            }
+            case "karozehn" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.karozehn);
+            }
+            case "karobube" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.karobube);
+            }
+            case "karodame" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.karodame);
+            }
+            case "karokoenig" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.karokoenig);
+            }
+            case "karoass" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.karoass);
+            }
+            case "pikzwei" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.pikzwei);
+            }
+            case "pikdrei" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.pikdrei);
+            }
+            case "pikvier" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.pikvier);
+            }
+            case "pikfuenf" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.pikfuenf);
+            }
+            case "piksechs" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.piksechs);
+            }
+            case "piksieben" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.piksieben);
+            }
+            case "pikacht" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.pikacht);
+            }
+            case "pikneun" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.pikneun);
+            }
+            case "pikzehn" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.pikzehn);
+            }
+            case "pikbube" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.pikbube);
+            }
+            case "pikdame" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.pikdame);
+            }
+            case "pikkoenig" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.pikkoenig);
+            }
+            case "pikass" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.pikass);
+            }
+            case "kreuzzwei" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.kreuzzwei);
+            }
+            case "kreuzdrei" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.kreuzdrei);
+            }
+            case "kreuzvier" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.kreuzvier);
+            }
+            case "kreuzfuenf" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.kreuzfuenf);
+            }
+            case "kreuzsechs" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.kreuzsechs);
+            }
+            case "kreuzsieben" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.kreuzsieben);
+            }
+            case "kreuzacht" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.kreuzacht);
+            }
+            case "kreuzneun" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.kreuzneun);
+            }
+            case "kreuzzehn" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.kreuzzehn);
+            }
+            case "kreuzbube" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.kreuzbube);
+            }
+            case "kreuzdame" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.kreuzdame);
+            }
+            case "kreuzkoenig" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.kreuzkoenig);
+            }
+            case "kreuzass" -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.kreuzass);
+            }
+            default -> {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.karterueckseite);
+            }
+
         }
     }
 }

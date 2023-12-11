@@ -48,7 +48,7 @@ public class SpielControllerImpl implements SpielController {
     }
 
     @Override
-    public void karteZiehen() throws KartenstapelLeerException {
+    public void karteZiehen() {
 
         if (!spiel.getKartenstapel().isEmpty()) {
             Karte karte = spiel.getKartenstapel().remove(0);
@@ -59,7 +59,7 @@ public class SpielControllerImpl implements SpielController {
             spiel.setAktuelleKarte(karte);
 
         } else {
-            throw new KartenstapelLeerException();
+            //Nichts tun
         }
     }
 

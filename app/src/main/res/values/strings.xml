@@ -23,4 +23,13 @@
     <string name="gerade_am_zug">Gerade am Zug:</string>
     <string name="karte_ziehen">Karte ziehen</string>
     <string name="gezogene_karte">Gezogene Karte:</string>
+    <string name="karten_in_diesem_spiel_gezogen">Karten in diesem Spiel gezogen.</string>
+    <string name="anzahl">Anzahl</string>
+    <string name="insgesamt_wurden">Insgesamt wurden</string>
+    <string name="hat_den_vierten_k_nig_gezogen_und_musste_das_glas_austrinken_prost">hat den vierten König gezogen und musste das Glas austrinken. Prost!</string>
+    <string name="name">Name</string>
+    <string name="beendetes_spiel">beendetes Spiel!</string>
+    <string name="anzahlBeendeteSpiele">Anzahl</string>
+    <string name="dies_war_dein">Dies war dein</string>
+    <string name="spiel_beendet">Spiel beendet!</string>
 </resources>

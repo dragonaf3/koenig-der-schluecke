@@ -1,16 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/buttonZurueckZumHauptmenueEinstellungenSeite"
+        android:layout_width="170dp"
+        android:layout_height="60dp"
+        android:contentDescription="@string/zurueck_zum_hauptmen"
+        android:text="@string/zurueck_zum_hauptmenue"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:backgroundTint="@color/grau_button_hintergrund"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewSpielBeendetGrafik" />
+
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="151dp"
-        android:layout_height="35dp"
-        android:text="Spiel beendet!"
+        android:id="@+id/textViewSpielBeendetUeberschrift"
+        android:layout_width="315dp"
+        android:layout_height="76dp"
+        android:text="@string/spiel_beendet"
         android:textColor="#000000"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="130dp"
-        tools:layout_editor_absoluteY="84dp" />
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="62dp" />
+
+    <TextView
+        android:id="@+id/textViewSatzanfangDiesWarDein"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dies_war_dein"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/textViewAnzahlBeendeteSpieleGesamt"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="177dp" />
+
+    <TextView
+        android:id="@+id/textViewAnzahlBeendeteSpieleGesamt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/anzahlBeendeteSpiele"
+        android:textColor="#0C0707"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="139dp"
+        tools:layout_editor_absoluteY="177dp" />
+
+    <TextView
+        android:id="@+id/textViewSatzendeBeendetesSpiel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/beendetes_spiel"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.233"
+        app:layout_constraintStart_toEndOf="@+id/textViewAnzahlBeendeteSpieleGesamt"
+        tools:layout_editor_absoluteY="177dp" />
+
+    <TextView
+        android:id="@+id/textViewNameSpielerKoenigGezogen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name"
+        android:textColor="#050202"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/textViewSatzendeHatKoenigGezogen"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="233dp" />
+
+    <TextView
+        android:id="@+id/textViewSatzendeHatKoenigGezogen"
+        android:layout_width="239dp"
+        android:layout_height="42dp"
+        android:text="@string/hat_den_vierten_k_nig_gezogen_und_musste_das_glas_austrinken_prost"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="109dp"
+        tools:layout_editor_absoluteY="233dp" />
+
+    <TextView
+        android:id="@+id/textViewSatzanfangInsgesamtKartenGezogen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/insgesamt_wurden"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/textViewAnzahlGezogenerKarten"
+        app:layout_constraintHorizontal_bias="0.594"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="303dp" />
+
+    <TextView
+        android:id="@+id/textViewAnzahlGezogenerKarten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/anzahl"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="168dp"
+        tools:layout_editor_absoluteY="303dp" />
+
+    <TextView
+        android:id="@+id/textViewSatzendeKartenImSpielGezogen"
+        android:layout_width="150dp"
+        android:layout_height="39dp"
+        android:text="@string/karten_in_diesem_spiel_gezogen"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="227dp"
+        tools:layout_editor_absoluteY="303dp" />
+
+    <ImageView
+        android:id="@+id/imageViewSpielBeendetGrafik"
+        android:layout_width="250dp"
+        android:layout_height="263dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="13dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonZurueckZumHauptmenueEinstellungenSeite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSatzendeKartenImSpielGezogen"
+        app:srcCompat="@drawable/spielbeendet" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,8 +9,7 @@
         android:id="@+id/aktuellerSpieler"
         android:layout_width="286dp"
         android:layout_height="92dp"
-        android:layout_marginTop="55dp"
-        android:layout_marginBottom="35dp"
+        android:layout_marginTop="5dp"
         android:contentDescription="@string/aktuelle_spieler_in"
         android:text="Platzhalter_aktueller_Spieler"
         android:textAlignment="center"
@@ -19,7 +18,7 @@
         app:layout_constraintBottom_toTopOf="@+id/koenigeBereitsGezogen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/amZug"
         tools:ignore="HardcodedText" />
 
     <TextView
@@ -41,8 +40,6 @@
         android:id="@+id/koenigeBereitsGezogen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:layout_marginBottom="5dp"
         android:text="@string/bereits_gezogene_koenige"
         android:textAlignment="center"
         android:textColor="@color/black"
@@ -54,13 +51,40 @@
 
     <com.example.koenigderschluecke.view.KartenStapelView
         android:id="@+id/kartenStapelView"
-        android:layout_width="378dp"
-        android:layout_height="345dp"
-        android:layout_marginBottom="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="382dp"
+        android:layout_height="356dp"
+        app:layout_constraintBottom_toTopOf="@+id/karteZiehen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gezogeneKoenigeTextNumber" />
+
+    <TextView
+        android:id="@+id/amZug"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:contentDescription="@string/gerade_am_zug"
+        android:text="@string/gerade_am_zug"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/aktuellerSpieler"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/karteZiehen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="@string/karte_ziehen"
+        android:contentDescription="@string/karte_ziehen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kartenStapelView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

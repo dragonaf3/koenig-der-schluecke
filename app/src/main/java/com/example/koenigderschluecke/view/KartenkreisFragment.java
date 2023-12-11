@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -26,12 +27,17 @@ public class KartenkreisFragment extends Fragment {
         TextView aktuellerSpielerTextView = view.findViewById(R.id.aktuellerSpieler);
         TextView gezogeneKoenigeTextView = view.findViewById(R.id.gezogeneKoenigeTextNumber);
         KartenStapelView kartenStapelView = view.findViewById(R.id.kartenStapelView);
+        Button karteZiehenButton = view.findViewById(R.id.karteZiehen);
 
         aktuellerSpielerTextView.setText(spielController.getNameAktuellerSpieler());
         //TODO: Vielleicht als String returnen?
         gezogeneKoenigeTextView.setText(Integer.toString(spielController.getGezogeneKoenige()));
         kartenStapelView.setKartenStapel(spielController.getKartenstapel());
 
+        karteZiehenButton.setOnClickListener(karteZiehenAktion -> {
+            spielController.karteZiehen();
+            //TODO: KartenkreisListener
+        });
 
         return view;
     }

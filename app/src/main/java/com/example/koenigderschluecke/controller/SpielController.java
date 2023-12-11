@@ -35,9 +35,8 @@ public interface SpielController {
     /**
      * Zieht eine Karte aus dem Kartenstapel und setzt damit die aktuelle Karte.
      *
-     * @throws KartenstapelLeerException Diese Ausnahme wird ausgelöst, wenn der Kartenstapel leer ist.
      */
-    void karteZiehen() throws KartenstapelLeerException;
+    void karteZiehen();
 
     /**
      * Methode, die den Namen der aktuellen Spieler*in zurückgibt.

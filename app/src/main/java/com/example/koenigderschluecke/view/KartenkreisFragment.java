@@ -36,7 +36,7 @@ public class KartenkreisFragment extends Fragment {
 
         karteZiehenButton.setOnClickListener(karteZiehenAktion -> {
             spielController.karteZiehen();
-            //TODO: KartenkreisListener
+            ((HauptspielActivity)getActivity()).karteGezogen();
         });
 
         return view;

@@ -1,6 +1,6 @@
 package com.example.koenigderschluecke.model;
 
-public enum RauschRitter {
+public enum RauschRitter implements RegelBeschreiber {
     ZWEI("Schlücke in Höhe der Karte verteilen."),
     DREI("Schlücke in Höhe der Karte verteilen."),
     VIER("Schlücke in Höhe der Karte verteilen."),
@@ -21,6 +21,7 @@ public enum RauschRitter {
         this.beschreibung = beschreibung;
     }
 
+    @Override
     public String getBeschreibung() {
         return beschreibung;
     }

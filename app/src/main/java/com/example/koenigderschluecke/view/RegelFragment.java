@@ -38,7 +38,7 @@ public class RegelFragment extends Fragment {
 
         naechsteRundeButton.setOnClickListener(nächsteRundeAktion -> {
             spielController.naechsteRunde();
-            //TODO: Fragment wechseln Listener?
+            ((HauptspielActivity)getActivity()).naechsteRunde();
         });
 
         return view;

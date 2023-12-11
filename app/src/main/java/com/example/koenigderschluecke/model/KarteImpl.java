@@ -8,6 +8,7 @@ public class KarteImpl implements Karte {
         this.wert = wert;
         this.symbol = symbol;
     }
+
     @Override
     public Enum getWert() {
         return wert;
@@ -16,6 +17,11 @@ public class KarteImpl implements Karte {
     @Override
     public Kartensymbol getSymbol() {
         return symbol;
+    }
+
+    @Override
+    public String getRegel() {
+        return ((RegelBeschreiber) wert).getBeschreibung();
     }
 
     @Override

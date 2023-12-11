@@ -16,9 +16,10 @@
         <item name="android:windowFullscreen">true</item>
     </style>
 
-    <style name="Theme.KönigDerSchlückeOhneBox" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.KönigDerSchlückeOhneBox" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Weitere Stildefinitionen hier -->
         <!-- Enable fullscreen -->
+        <item name="colorOnPrimary">@color/white</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
 

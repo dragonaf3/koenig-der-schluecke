@@ -102,4 +102,9 @@ public class SpielControllerImpl implements SpielController {
     public int getAnzahlGezogenerKarten() {
         return spiel.getAnzahlGezogenerKarten();
     }
+
+    @Override
+    public void beendeSpiel() {
+        SpielSingleton.deleteInstance();
+    }
 }

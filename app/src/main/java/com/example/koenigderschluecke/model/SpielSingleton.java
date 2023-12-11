@@ -49,6 +49,13 @@ public class SpielSingleton implements Spiel {
     }
 
     /**
+     * Diese Methode löscht die Instanz des Spiels.
+     */
+    public static void deleteInstance() {
+        SpielSingleton.instance = null;
+    }
+
+    /**
      * Konstruktor für das Kings Cup Spiel.
      * Initialisiert die Spielerliste, den Kartenstapel und setzt die aktuelle Runde
      * sowie die Anzahl der gezogenen Könige auf ihren Anfangswert.

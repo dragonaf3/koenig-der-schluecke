@@ -73,6 +73,8 @@ public class HauptspielActivity extends AppCompatActivity {
     }
 
     public void zurueckZumHauptmenue() {
+        spielController.beendeSpiel();
+
         startActivity(new Intent(this, StartbildschirmActivity.class));
     }
 

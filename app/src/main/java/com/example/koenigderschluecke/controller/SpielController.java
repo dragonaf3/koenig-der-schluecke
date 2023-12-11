@@ -72,4 +72,9 @@ public interface SpielController {
      */
     int getAnzahlGezogenerKarten();
 
+    /**
+     * Beendet das aktuelle Spiel und räumt auf.
+     */
+    void beendeSpiel();
+
 }

@@ -27,7 +27,7 @@ public class KartenkreisFragment extends Fragment {
         TextView aktuellerSpielerTextView = view.findViewById(R.id.aktuellerSpieler);
         TextView gezogeneKoenigeTextView = view.findViewById(R.id.gezogeneKoenigeTextNumber);
         KartenStapelView kartenStapelView = view.findViewById(R.id.kartenStapelView);
-        Button karteZiehenButton = view.findViewById(R.id.karteZiehen);
+        Button karteZiehenButton = view.findViewById(R.id.buttonKarteZiehen);
 
         aktuellerSpielerTextView.setText(spielController.getNameAktuellerSpieler());
         //TODO: Vielleicht als String returnen?

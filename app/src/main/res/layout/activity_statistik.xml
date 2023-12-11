@@ -30,7 +30,6 @@
         android:id="@+id/buttonZurueckZumHauptmenueStatistikSeite"
         android:layout_width="200dp"
         android:layout_height="80dp"
-        android:layout_marginTop="285dp"
         android:layout_marginBottom="50dp"
         android:contentDescription="@string/zurueck_zum_hauptmen"
         android:text="@string/zurueck_zum_hauptmenue"
@@ -40,18 +39,85 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/platzhalter"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/platzhalter"
+        android:id="@+id/textViewStatistikUeberschrift"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Platzhalter"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/statistik"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewUeberschriftGesamtSpiele"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/statistikUeberschrift" />
+
+    <TextView
+        android:id="@+id/textViewUeberschriftGesamtSpiele"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/insgesamt_gespiele_spiele"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.193"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="188dp" />
+
+    <TextView
+        android:id="@+id/textViewStatistikAnzahlGesamtSpiele"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="221dp"
+        android:layout_marginBottom="47dp"
+        android:text="@string/anzahlgesamtspiele"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewUeberschriftGesamtKartenGezogen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUeberschriftGesamtSpiele" />
+
+    <TextView
+        android:id="@+id/textViewUeberschriftGesamtKartenGezogen"
+        android:layout_width="349dp"
+        android:layout_height="44dp"
+        android:text="@string/insgesamt_wurden_so_viele_karten_in_allen_spielen_gezogen"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.693"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="294dp" />
+
+    <TextView
+        android:id="@+id/textViewAnzahlGesamtKarten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/anzahlgesamtkarten"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.173"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="354dp" />
+
+    <Button
+        android:id="@+id/buttonStatistikLoeschen"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="138dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/statistik_l_schen"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:backgroundTint="@color/grau_button_hintergrund"
+        app:layout_constraintBottom_toTopOf="@+id/buttonZurueckZumHauptmenueStatistikSeite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAnzahlGesamtKarten" />
 </androidx.constraintlayout.widget.ConstraintLayout>

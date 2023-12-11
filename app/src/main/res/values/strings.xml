@@ -32,4 +32,10 @@
     <string name="anzahlBeendeteSpiele">Anzahl</string>
     <string name="dies_war_dein">Dies war dein</string>
     <string name="spiel_beendet">Spiel beendet!</string>
+    <string name="statistik_l_schen">Statistik löschen</string>
+    <string name="anzahlgesamtkarten">AnzahlGesamtKarten</string>
+    <string name="insgesamt_wurden_so_viele_karten_in_allen_spielen_gezogen">Insgesamt wurden so viele Karten in allen Spielen gezogen:</string>
+    <string name="anzahlgesamtspiele">AnzahlGesamtSpiele</string>
+    <string name="insgesamt_gespiele_spiele">Insgesamt gespiele Spiele:</string>
+    <string name="statistik">Statistik</string>
 </resources>

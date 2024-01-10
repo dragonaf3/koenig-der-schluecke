@@ -48,6 +48,10 @@
             android:name=".view.FeedbackActivity">
         </activity>
 
+        <activity
+            android:name=".view.lobby.LobbyActivity">
+        </activity>
+
     </application>
 
 </manifest>

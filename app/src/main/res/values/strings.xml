@@ -38,4 +38,7 @@
     <string name="anzahlgesamtspiele">AnzahlGesamtSpiele</string>
     <string name="insgesamt_gespiele_spiele">Insgesamt gespiele Spiele:</string>
     <string name="statistik">Statistik</string>
+    <string name="singleplayer_auswahl">Singleplayer</string>
+    <string name="multiplayer_auswahl">Multiplayer</string>
+    <string name="lobby_name_eingeben">Name eingeben</string>
 </resources>

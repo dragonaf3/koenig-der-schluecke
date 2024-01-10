@@ -20,12 +20,11 @@ public class SpielControllerImpl implements SpielController {
 
     /**
      * Der Konstruktor der Klasse SpielControllerImpl.
-     * Er initialisiert das Spiel mit einer neuen Instanz von SpielSingelton.
-     *
-     * @param regelSet Das Regelset, das für das Spiel verwendet werden soll.
+     * Er initialisiert das Spiel mit einer Instanz des SpielSingleton, welche zuvor vom LobbyController erstellt wurde.
      */
-    public SpielControllerImpl(String regelSet, List<Spieler> spielerListe) {
-        this.spiel = SpielSingleton.getSpielInstance(regelSet, spielerListe);
+    public SpielControllerImpl() throws Exception {
+        this.spiel = SpielSingleton.getInstanceOhneErstellen();
+        //TODO: Exception Handling
     }
 
     @Override

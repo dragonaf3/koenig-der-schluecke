@@ -1,52 +1,70 @@
 package com.example.koenigderschluecke.controller;
 
+import com.example.koenigderschluecke.model.Lobby;
+import com.example.koenigderschluecke.model.LobbyImpl;
+import com.example.koenigderschluecke.model.SpielSingleton;
+import com.example.koenigderschluecke.model.Spieler;
+
 import java.util.List;
 
-//TODO: Implementieren, Lobby sollte das SpielSingleton erstellen. Dem SpielController sollte das Singleton dann übergeben werden!
-
 public class LobbyControllerImpl implements LobbyController {
-    @Override
-    public void setAnzahlSpieler(int anzahlSpieler) {
 
+    private Lobby lobby;
+
+    public LobbyControllerImpl() {
+        this.lobby = new LobbyImpl();
     }
 
     @Override
-    public int getAnzahlSpieler() {
-        return 0;
-    }
-
-    @Override
-    public void addSpieler(String spielerName) {
-
-    }
-
-    @Override
-    public void removeSpieler(String spielerName) {
-
-    }
-
-    @Override
-    public List<String> getSpielerListe() {
-        return null;
-    }
-
-    @Override
-    public void waehleRegelset(int regelsetId) {
-
-    }
-
-    @Override
-    public int getAktuellesRegelset() {
-        return 0;
-    }
-
-    @Override
-    public void starteSpiel() {
-
+    public void starteSpiel() throws IllegalArgumentException {
+        if (lobby.getAnzahlSpieler() < 2) {
+            throw new IllegalArgumentException("Zu wenig Spieler*innen");
+        }
+        SpielSingleton.getSpielInstance(getAktuellesRegelset(), getSpielerListe());
     }
 
     @Override
     public void beendeLobby() {
-
+        lobby = null;
     }
+
+    @Override
+    public void addSpieler(String spielerName) {
+        lobby.addSpieler(spielerName);
+    }
+
+    @Override
+    public void removeSpieler() {
+        lobby.removeSpieler();
+    }
+
+    @Override
+    public List<Spieler> getSpielerListe() {
+        return lobby.getSpielerListe();
+    }
+
+    @Override
+    public void waehleRegelset(int regelsetId) {
+        lobby.setRegelsetId(regelsetId);
+    }
+
+    @Override
+    public String getAktuellesRegelset() throws IllegalArgumentException {
+        //TODO: Fabrik besser!
+        int idRegelset = lobby.getRegelsetId();
+
+        switch (idRegelset) {
+            case 0 -> {
+                return "Hopfenhacker";
+            }
+            case 1 -> {
+                return "KuebelKoenig";
+            }
+            case 2 -> {
+                return "RauschRitter";
+            }
+            default -> throw new IllegalArgumentException(); //TODO: Verbessern
+        }
+    }
+
 }

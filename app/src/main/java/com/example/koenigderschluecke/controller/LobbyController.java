@@ -1,5 +1,7 @@
 package com.example.koenigderschluecke.controller;
 
+import com.example.koenigderschluecke.model.Spieler;
+
 import java.util.List;
 
 /**
@@ -7,20 +9,6 @@ import java.util.List;
  * Ein LobbyController ist verantwortlich für die Erstellung und Verwaltung der Spiellobby.
  */
 public interface LobbyController {
-
-    /**
-     * Setzt die Anzahl der Spieler*innen für das Spiel.
-     *
-     * @param anzahlSpieler Die Anzahl der Spieler*innen.
-     */
-    void setAnzahlSpieler(int anzahlSpieler);
-
-    /**
-     * Gibt die aktuell eingestellte Anzahl der Spieler*innen zurück.
-     *
-     * @return int Anzahl der Spieler*innen.
-     */
-    int getAnzahlSpieler();
 
     /**
      * Fügt einen neuen Spieler*in zur Lobby hinzu.
@@ -31,17 +19,15 @@ public interface LobbyController {
 
     /**
      * Entfernt einen Spieler*in aus der Lobby.
-     *
-     * @param spielerName Name des/der Spieler*in.
      */
-    void removeSpieler(String spielerName);
+    void removeSpieler();
 
     /**
      * Gibt eine Liste aller Spieler*innen in der Lobby zurück.
      *
-     * @return List<String> Liste der Spieler*innen.
+     * @return List<Spieler> Liste der Spieler*innen.
      */
-    List<String> getSpielerListe();
+    List<Spieler> getSpielerListe();
 
     /**
      * Wählt ein Regelset für das Spiel aus.
@@ -53,14 +39,16 @@ public interface LobbyController {
     /**
      * Gibt die ID des aktuell ausgewählten Regelsets zurück.
      *
-     * @return int ID des Regelsets.
+     * @return String Name des Regelsets.
      */
-    int getAktuellesRegelset();
+    String getAktuellesRegelset();
 
     /**
      * Startet das Spiel mit den aktuellen Einstellungen der Lobby.
+     *
+     * @throws IllegalArgumentException Wenn nicht genügend Spieler*innen in der Lobby sind.
      */
-    void starteSpiel();
+    void starteSpiel() throws IllegalArgumentException;
 
     /**
      * Beendet die Lobby und führt notwendige Aufräumarbeiten durch.

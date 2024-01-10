@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/ueberschriftTextView"
+        android:layout_width="320dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="45dp"
+        android:contentDescription="@string/ueberschrift_koenig_der_schluecke"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/koenig_der_schluecke"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/zurueckZumHauptmenueButton"
+        android:layout_width="250dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="@color/grau_button_hintergrund"
+        android:text="@string/zurueck_zum_hauptmenue"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="25dp"
+        android:autofillHints="Name"
+        android:hint="@string/lobby_name_eingeben"
+        android:inputType="text"
+        android:minHeight="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/zurueckZumHauptmenueButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/playerAddButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/black"
+        android:text="+"
+        app:layout_constraintBottom_toBottomOf="@+id/nameEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <ListView
+        android:id="@+id/namesListView"
+        android:layout_width="409dp"
+        android:layout_height="240dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ueberschriftTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

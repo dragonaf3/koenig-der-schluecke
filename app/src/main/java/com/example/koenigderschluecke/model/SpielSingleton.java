@@ -42,7 +42,7 @@ public class SpielSingleton implements Spiel {
      */
     public static Spiel getInstanceOhneErstellen() throws Exception {
         if (SpielSingleton.instance == null) {
-            throw new Exception();
+            throw new Exception(); //TODO: Exception verbessern
         }
 
         return SpielSingleton.instance;

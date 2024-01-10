@@ -1,4 +1,4 @@
-package com.example.koenigderschluecke.view;
+package com.example.koenigderschluecke.view.spiel;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,14 +10,16 @@ import com.example.koenigderschluecke.controller.PersistenzController;
 import com.example.koenigderschluecke.controller.PersistenzControllerImpl;
 import com.example.koenigderschluecke.controller.SpielController;
 import com.example.koenigderschluecke.controller.SpielControllerImpl;
+import com.example.koenigderschluecke.model.Spieler;
 import com.example.koenigderschluecke.model.SpielerImpl;
-import com.example.koenigderschluecke.network.BluetoothConnector;
-import com.example.koenigderschluecke.network.BluetoothConnectorImpl;
+import com.example.koenigderschluecke.view.StartbildschirmActivity;
+
+import java.util.ArrayList;
+import java.util.List;
 
 //TODO: Fehlt vieles
 public class HauptspielActivity extends AppCompatActivity {
     private SpielController spielController;
-    private BluetoothConnector bluetoothConnector;
     private PersistenzController persistenzController;
 
     @Override
@@ -25,19 +27,15 @@ public class HauptspielActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hauptspiel);
 
+        //Testzweck
+        List<Spieler> spielerList = new ArrayList<>();
+        spielerList.add(new SpielerImpl("Alex"));
+        spielerList.add(new SpielerImpl("Eva"));
+        //Testzweck
+
         persistenzController = new PersistenzControllerImpl(this);
         //Test Regelset
-        spielController = new SpielControllerImpl("RauschRitter");
-        try {
-            bluetoothConnector = new BluetoothConnectorImpl();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-
-        //Testzwecke
-        bluetoothConnector.addSpieler(new SpielerImpl("Alex"));
-        bluetoothConnector.addSpieler(new SpielerImpl("Eva"));
-        //Testzwecke
+        spielController = new SpielControllerImpl("RauschRitter", spielerList);
 
         if (savedInstanceState == null) {
             KartenkreisFragment fragment = new KartenkreisFragment();

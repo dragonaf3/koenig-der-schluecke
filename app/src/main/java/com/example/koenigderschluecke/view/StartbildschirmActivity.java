@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.koenigderschluecke.R;
+import com.example.koenigderschluecke.view.spiel.HauptspielActivity;
 
 public class StartbildschirmActivity extends AppCompatActivity {
 

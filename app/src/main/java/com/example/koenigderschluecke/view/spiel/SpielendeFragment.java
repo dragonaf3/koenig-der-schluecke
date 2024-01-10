@@ -1,6 +1,5 @@
-package com.example.koenigderschluecke.view;
+package com.example.koenigderschluecke.view.spiel;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import com.example.koenigderschluecke.R;
 import com.example.koenigderschluecke.controller.PersistenzController;
 import com.example.koenigderschluecke.controller.SpielController;
+import com.example.koenigderschluecke.view.spiel.HauptspielActivity;
 
 public class SpielendeFragment extends Fragment {
     private SpielController spielController;

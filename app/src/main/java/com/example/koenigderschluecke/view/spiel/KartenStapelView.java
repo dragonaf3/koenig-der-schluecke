@@ -1,4 +1,4 @@
-package com.example.koenigderschluecke.view;
+package com.example.koenigderschluecke.view.spiel;
 
 import android.content.Context;
 import android.graphics.Bitmap;

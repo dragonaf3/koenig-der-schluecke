@@ -27,9 +27,9 @@ public class SpielSingleton implements Spiel {
      *
      * @return Eine Instanz des Spiels.
      */
-    public static Spiel getSpielInstance(String regelSet) {
+    public static Spiel getSpielInstance(String regelSet, List<Spieler> spielerListe) {
         if (SpielSingleton.instance == null) {
-            SpielSingleton.instance = new SpielSingleton(regelSet);
+            SpielSingleton.instance = new SpielSingleton(regelSet, spielerListe);
         }
         return SpielSingleton.instance;
     }
@@ -60,12 +60,13 @@ public class SpielSingleton implements Spiel {
      * Initialisiert die Spielerliste, den Kartenstapel und setzt die aktuelle Runde
      * sowie die Anzahl der gezogenen Könige auf ihren Anfangswert.
      */
-    private SpielSingleton(String regelSet) {
+    private SpielSingleton(String regelSet, List<Spieler> spielerListe) {
         this.spielerListe = new ArrayList<>();
         this.anzahlGezogenerKarten = 0;
         this.gezogeneKoenige = 0;
         this.aktuellerSpielerIndex = 0;
         initialisiereKartenstapelMitBestimmtenRegelSet(regelSet);
+        this.spielerListe = spielerListe;
     }
 
     @Override
@@ -118,8 +119,9 @@ public class SpielSingleton implements Spiel {
         this.aktuellerSpielerIndex = aktuellerSpielerIndex;
     }
 
+    //TODO: Abstract-Fabric Muster?
     @Override
-    public void initialisiereKartenstapelMitBestimmtenRegelSet(String regelSet) throws IllegalArgumentException{
+    public void initialisiereKartenstapelMitBestimmtenRegelSet(String regelSet) throws IllegalArgumentException {
         switch (regelSet) {
             case "RauschRitter" -> this.kartenstapel = initialisiereKartenstapelRauschRitter();
             case "Hopfenhacker" -> this.kartenstapel = initialisiereKartenstapelHopfenhacker();

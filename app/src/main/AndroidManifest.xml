@@ -29,7 +29,7 @@
         </activity>
 
         <activity
-            android:name=".view.HauptspielActivity">
+            android:name=".view.spiel.HauptspielActivity">
         </activity>
 
         <activity

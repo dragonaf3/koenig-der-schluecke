@@ -5,6 +5,7 @@ import com.example.koenigderschluecke.model.Karte;
 import com.example.koenigderschluecke.model.RauschRitter;
 import com.example.koenigderschluecke.model.Spiel;
 import com.example.koenigderschluecke.model.SpielSingleton;
+import com.example.koenigderschluecke.model.Spieler;
 
 import java.util.List;
 
@@ -23,8 +24,8 @@ public class SpielControllerImpl implements SpielController {
      *
      * @param regelSet Das Regelset, das für das Spiel verwendet werden soll.
      */
-    public SpielControllerImpl(String regelSet) {
-        this.spiel = SpielSingleton.getSpielInstance(regelSet);
+    public SpielControllerImpl(String regelSet, List<Spieler> spielerListe) {
+        this.spiel = SpielSingleton.getSpielInstance(regelSet, spielerListe);
     }
 
     @Override

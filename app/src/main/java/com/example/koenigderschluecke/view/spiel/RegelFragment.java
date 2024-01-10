@@ -1,4 +1,4 @@
-package com.example.koenigderschluecke.view;
+package com.example.koenigderschluecke.view.spiel;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.koenigderschluecke.R;
 import com.example.koenigderschluecke.controller.SpielController;
+import com.example.koenigderschluecke.view.spiel.HauptspielActivity;
 
 public class RegelFragment extends Fragment {
     private SpielController spielController;

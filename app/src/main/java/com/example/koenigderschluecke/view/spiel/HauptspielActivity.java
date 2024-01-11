@@ -10,6 +10,7 @@ import com.example.koenigderschluecke.controller.PersistenzController;
 import com.example.koenigderschluecke.controller.PersistenzControllerImpl;
 import com.example.koenigderschluecke.controller.SpielController;
 import com.example.koenigderschluecke.controller.SpielControllerImpl;
+import com.example.koenigderschluecke.model.SpielSingleton;
 import com.example.koenigderschluecke.model.Spieler;
 import com.example.koenigderschluecke.model.SpielerImpl;
 import com.example.koenigderschluecke.view.StartbildschirmActivity;
@@ -27,15 +28,13 @@ public class HauptspielActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hauptspiel);
 
-        //Testzweck
-        List<Spieler> spielerList = new ArrayList<>();
-        spielerList.add(new SpielerImpl("Alex"));
-        spielerList.add(new SpielerImpl("Eva"));
-        //Testzweck
-
         persistenzController = new PersistenzControllerImpl(this);
-        //Test Regelset
-        spielController = new SpielControllerImpl("RauschRitter", spielerList);
+
+        try {
+            spielController = new SpielControllerImpl();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
         if (savedInstanceState == null) {
             KartenkreisFragment fragment = new KartenkreisFragment();
@@ -65,7 +64,8 @@ public class HauptspielActivity extends AppCompatActivity {
         KartenkreisFragment kartenkreisFragment = new KartenkreisFragment();
         kartenkreisFragment.setSpielController(spielController);
 
-        getSupportFragmentManager().beginTransaction()
+        getSupportFragmentManager()
+                .beginTransaction()
                 .replace(R.id.fragment_container, kartenkreisFragment)
                 .commit();
 

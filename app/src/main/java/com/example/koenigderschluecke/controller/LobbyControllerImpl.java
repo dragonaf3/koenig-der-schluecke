@@ -34,8 +34,8 @@ public class LobbyControllerImpl implements LobbyController {
     }
 
     @Override
-    public void removeSpieler() {
-        lobby.removeSpieler();
+    public void removeSpieler(String name) {
+        lobby.removeSpieler(name);
     }
 
     @Override

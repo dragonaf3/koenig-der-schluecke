@@ -19,8 +19,10 @@ public interface LobbyController {
 
     /**
      * Entfernt einen Spieler*in aus der Lobby.
+     *
+     * @param name Name des/der Spieler*in.
      */
-    void removeSpieler();
+    void removeSpieler(String name);
 
     /**
      * Gibt eine Liste aller Spieler*innen in der Lobby zurück.

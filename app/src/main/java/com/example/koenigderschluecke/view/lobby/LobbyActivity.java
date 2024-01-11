@@ -2,6 +2,7 @@ package com.example.koenigderschluecke.view.lobby;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +10,7 @@ import com.example.koenigderschluecke.R;
 import com.example.koenigderschluecke.controller.LobbyController;
 import com.example.koenigderschluecke.controller.LobbyControllerImpl;
 import com.example.koenigderschluecke.view.StartbildschirmActivity;
+import com.example.koenigderschluecke.view.spiel.HauptspielActivity;
 
 //TODO: Implementieren
 
@@ -38,12 +40,22 @@ public class LobbyActivity extends AppCompatActivity {
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.fragment_container, singleplayerFragment)
+                .replace(R.id.fragment_container, singleplayerFragment)
                 .commit();
     }
 
     public void starteMultiplayer() {
         //TODO: Implementieren
+    }
+
+    public void starteHauptspiel() {
+        try {
+            lobbyController.starteSpiel();
+            startActivity(new Intent(this, HauptspielActivity.class));
+        } catch (IllegalArgumentException exception) {
+            Toast.makeText(this, "Zu wenige Spieler*innen", Toast.LENGTH_LONG).show();
+        }
+        //TODO: Hardcoded, ändern!
     }
 
     public void zurueckZumHauptmenue() {

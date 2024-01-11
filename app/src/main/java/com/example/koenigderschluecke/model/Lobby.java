@@ -16,13 +16,17 @@ public interface Lobby {
 
     /**
      * Fügt einen neuen Spieler zur Lobby hinzu.
+     *
+     * @param name Der Name des Spielers.
      */
     public void addSpieler(String name);
 
     /**
      * Entfernt einen Spieler aus der Lobby.
+     *
+     * @param name Der Name des Spielers.
      */
-    public void removeSpieler();
+    public void removeSpieler(String name);
 
     /**
      * Gibt die Anzahl der Spieler in der Lobby zurück.

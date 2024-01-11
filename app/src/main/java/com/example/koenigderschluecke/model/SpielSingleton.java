@@ -61,12 +61,11 @@ public class SpielSingleton implements Spiel {
      * sowie die Anzahl der gezogenen Könige auf ihren Anfangswert.
      */
     private SpielSingleton(String regelSet, List<Spieler> spielerListe) {
-        this.spielerListe = new ArrayList<>();
+        this.spielerListe = spielerListe;
         this.anzahlGezogenerKarten = 0;
         this.gezogeneKoenige = 0;
         this.aktuellerSpielerIndex = 0;
         initialisiereKartenstapelMitBestimmtenRegelSet(regelSet);
-        this.spielerListe = spielerListe;
     }
 
     @Override

@@ -49,10 +49,12 @@ public class LobbyImpl implements Lobby {
 
     /**
      * Entfernt den letzten Spieler aus der Spielerliste und verringert die Anzahl der Spieler um eins.
+     *
+     * @param name Der Name des zu entfernenden Spielers
      */
     @Override
-    public void removeSpieler() {
-        spielerList.remove(spielerList.size() - 1);
+    public void removeSpieler(String name) {
+        spielerList.removeIf(spieler -> spieler.getName().equals(name));
         anzahlSpieler--;
     }
 

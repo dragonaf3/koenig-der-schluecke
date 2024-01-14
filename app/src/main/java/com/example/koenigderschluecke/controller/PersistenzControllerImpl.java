@@ -4,23 +4,55 @@ import android.content.Context;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
+/**
+ * Implementierung des PersistenzControllers.
+ * Diese Klasse ist verantwortlich für das Laden und Speichern von Spielstatistiken.
+ */
 public class PersistenzControllerImpl implements PersistenzController {
+    public static final String DATEINAME = "spielStatistik.txt";
     private Context context;
-    private static final String DATEINAME = "spielStatistik.txt";
     private int anzahlGezogeneKarten;
     private int anzahlGespielteSpiele;
 
+    /**
+     * Konstruktor für PersistenzControllerImpl.
+     *
+     * @param context Kontext der Anwendung.
+     */
     public PersistenzControllerImpl(Context context) {
         this.context = context;
         ladeStatistik();
     }
 
+
+
+    /**
+     * Gibt die Anzahl der gezogenen Karten zurück. Dient zum testen.
+     *
+     * @return Anzahl der gezogenen Karten.
+     */
+    int getAnzahlGezogeneKarten() {
+        return anzahlGezogeneKarten;
+    }
+
+    /**
+     * Gibt die Anzahl der gespielten Spiele zurück. Dient zum testen.
+     *
+     * @return Anzahl der gespielten Spiele.
+     */
+    int getAnzahlGespielteSpiele() {
+        return anzahlGespielteSpiele;
+    }
+
+    /**
+     * Speichert die Statistik.
+     *
+     * @param anzahlGezogeneKartenImAktuellenSpiel Anzahl der im aktuellen Spiel gezogenen Karten.
+     */
     @Override
     public void speichereStatistik(int anzahlGezogeneKartenImAktuellenSpiel) {
         anzahlGezogeneKarten = anzahlGezogeneKarten + anzahlGezogeneKartenImAktuellenSpiel;
@@ -37,6 +69,9 @@ public class PersistenzControllerImpl implements PersistenzController {
 
     }
 
+    /**
+     * Lädt die Statistik.
+     */
     @Override
     public void ladeStatistik() {
         try {
@@ -60,11 +95,19 @@ public class PersistenzControllerImpl implements PersistenzController {
         }
     }
 
+    /**
+     * Lädt die Statistik am Spielende.
+     *
+     * @return Anzahl der gespielten Spiele als String.
+     */
     @Override
     public String ladeSpielendeStatistik() {
         return Integer.toString(anzahlGespielteSpiele);
     }
 
+    /**
+     * Setzt die Statistik zurück.
+     */
     @Override
     public void resetStatistik() {
         anzahlGezogeneKarten = 0;

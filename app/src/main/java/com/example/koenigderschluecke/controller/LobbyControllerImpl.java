@@ -7,12 +7,33 @@ import com.example.koenigderschluecke.model.Spieler;
 
 import java.util.List;
 
+/**
+ * Implementierung des LobbyControllers. Erstellt eine Lobby und verwaltet diese.
+ */
 public class LobbyControllerImpl implements LobbyController {
 
     private Lobby lobby;
 
     public LobbyControllerImpl() {
         this.lobby = new LobbyImpl();
+    }
+
+    /**
+     * Diese Methode dient dem testen.
+     *
+     * @return Lobby, die verwaltet wird.
+     */
+    Lobby getLobby() {
+        return lobby;
+    }
+
+    /**
+     * Diese Methode dient dem testen.
+     *
+     * @param lobby Lobby, die verwaltet werden soll.
+     */
+    void setLobby(Lobby lobby) {
+        this.lobby = lobby;
     }
 
     @Override

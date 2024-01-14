@@ -1,10 +1,13 @@
 package com.example.koenigderschluecke.network;
 
-//TODO: Diese Interface und alles drum herum muss noch konzipiert werden. Es dient erstmal nur als vorläufiger Spieler*innen Connector
+//TODO: Alles Englische weg, BluetoothConnector und Impl noch coden. Discovery und Dateiaustausch ist erstmal egal
 
+import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 
 import com.example.koenigderschluecke.model.Spieler;
+
+import java.util.Set;
 
 /**
  * Dieses Interface definiert die Methoden, die ein BluetoothConnector implementieren muss.
@@ -12,4 +15,6 @@ import com.example.koenigderschluecke.model.Spieler;
 public interface BluetoothConnector {
 
     void bluetoothAktivierung();
+
+    Set<BluetoothDevice> getBluetoothDevices();
 }

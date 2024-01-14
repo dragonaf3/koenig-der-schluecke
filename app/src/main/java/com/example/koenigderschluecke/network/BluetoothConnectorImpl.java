@@ -6,6 +6,7 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothManager;
 import android.content.Context;
 import android.content.Intent;
@@ -20,6 +21,9 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import java.util.Set;
+import java.util.UUID;
+
 //TODO: Strings extrahieren
 
 /**
@@ -27,15 +31,19 @@ import androidx.core.app.ActivityCompat;
  */
 @RequiresApi(api = Build.VERSION_CODES.S)
 public class BluetoothConnectorImpl implements BluetoothConnector {
+    public static final UUID MY_UUID = UUID.randomUUID();
     private final static int REQUEST_ENABLE_BT = 1;
     private final BluetoothManager bluetoothManager;
     private final BluetoothAdapter bluetoothAdapter;
     private Context context;
+    private Set<BluetoothDevice> pairedDevices;
 
     public BluetoothConnectorImpl(Context context) {
         this.context = context;
         this.bluetoothManager = context.getSystemService(BluetoothManager.class);
         this.bluetoothAdapter = bluetoothManager.getAdapter();
+
+        this.pairedDevices = holePairedDevices();
     }
 
     @SuppressLint("MissingPermission") //PermissionCheck ist separate Methode
@@ -57,12 +65,23 @@ public class BluetoothConnectorImpl implements BluetoothConnector {
         Toast.makeText(context, "Bluetooth bereits aktiviert", Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    public Set<BluetoothDevice> getBluetoothDevices() {
+        return pairedDevices;
+    }
+
     private boolean checkBluetoothSupport() {
         return bluetoothAdapter != null;
     }
 
     private boolean checkBluetoothEnabled() {
         return bluetoothAdapter.isEnabled();
+    }
+
+    @SuppressLint("MissingPermission") //PermissionCheck ist separate Methode
+    private Set<BluetoothDevice> holePairedDevices() {
+        permissionCheckBLUETOOTH_CONNECT();
+        return bluetoothAdapter.getBondedDevices();
     }
 
     private void permissionCheckBLUETOOTH_CONNECT() {

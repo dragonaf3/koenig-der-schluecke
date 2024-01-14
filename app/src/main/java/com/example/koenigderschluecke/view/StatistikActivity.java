@@ -1,5 +1,6 @@
 package com.example.koenigderschluecke.view;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -14,7 +15,7 @@ import com.example.koenigderschluecke.controller.PersistenzControllerImpl;
 /**
  * Diese Activity zeigt die Statistik an. Es kann jederzeit zum Hauptmenü gegangen werden.
  */
-public class StatistikActivity extends AppCompatActivity {
+public class StatistikActivity extends Activity {
     private PersistenzController persistenzController;
 
     @Override

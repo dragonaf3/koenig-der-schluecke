@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 
 import com.example.koenigderschluecke.R;
 import com.example.koenigderschluecke.controller.LobbyController;
@@ -14,7 +14,7 @@ import com.example.koenigderschluecke.view.spiel.HauptspielActivity;
 
 //TODO: Implementieren
 
-public class LobbyActivity extends AppCompatActivity {
+public class LobbyActivity extends FragmentActivity {
     private LobbyController lobbyController;
 
     @Override

@@ -1,5 +1,6 @@
 package com.example.koenigderschluecke.view;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -13,7 +14,7 @@ import com.example.koenigderschluecke.R;
  * Diese Klasse repräsentiert die EinstellungenActivity.
  * Sie erbt von der AppCompatActivity-Klasse.
  */
-public class EinstellungenActivity extends AppCompatActivity {
+public class EinstellungenActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

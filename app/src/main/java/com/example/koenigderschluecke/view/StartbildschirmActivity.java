@@ -2,6 +2,7 @@ package com.example.koenigderschluecke.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -11,7 +12,7 @@ import com.example.koenigderschluecke.R;
 import com.example.koenigderschluecke.view.lobby.LobbyActivity;
 import com.example.koenigderschluecke.view.spiel.HauptspielActivity;
 
-public class StartbildschirmActivity extends AppCompatActivity {
+public class StartbildschirmActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 
 import com.example.koenigderschluecke.R;
 import com.example.koenigderschluecke.controller.PersistenzController;
@@ -19,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //TODO: Fehlt vieles
-public class HauptspielActivity extends AppCompatActivity {
+public class HauptspielActivity extends FragmentActivity {
     private SpielController spielController;
     private PersistenzController persistenzController;
 

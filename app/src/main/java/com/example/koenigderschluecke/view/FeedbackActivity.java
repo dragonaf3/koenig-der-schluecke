@@ -12,6 +12,9 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.Objects;
 
+/**
+ * Diese Activity ist für die Feedback-Seite zuständig.
+ */
 public class FeedbackActivity extends AppCompatActivity {
 
     @Override

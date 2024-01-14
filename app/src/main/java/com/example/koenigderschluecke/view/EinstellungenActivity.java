@@ -9,6 +9,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.koenigderschluecke.R;
 
+/**
+ * Diese Klasse repräsentiert die EinstellungenActivity.
+ * Sie erbt von der AppCompatActivity-Klasse.
+ */
 public class EinstellungenActivity extends AppCompatActivity {
 
     @Override

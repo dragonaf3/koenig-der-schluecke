@@ -11,6 +11,9 @@ import com.example.koenigderschluecke.R;
 import com.example.koenigderschluecke.controller.PersistenzController;
 import com.example.koenigderschluecke.controller.PersistenzControllerImpl;
 
+/**
+ * Diese Activity zeigt die Statistik an. Es kann jederzeit zum Hauptmenü gegangen werden.
+ */
 public class StatistikActivity extends AppCompatActivity {
     private PersistenzController persistenzController;
 
@@ -36,5 +39,13 @@ public class StatistikActivity extends AppCompatActivity {
         });
 
         //TODO: Persistenz hier einfügen
+    }
+
+    /**
+     * Dient ausschließlich Testzwecke!
+     */
+    void setStatistik() {
+        TextView statistikAnzahlGesamtSpiele = findViewById(R.id.textViewStatistikAnzahlGesamtSpiele);
+        statistikAnzahlGesamtSpiele.setText("5");
     }
 }

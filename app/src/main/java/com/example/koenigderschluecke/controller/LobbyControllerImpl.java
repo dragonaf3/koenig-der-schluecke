@@ -29,12 +29,12 @@ public class LobbyControllerImpl implements LobbyController {
     }
 
     @Override
-    public void addSpieler(String spielerName) {
+    public void addSpieler(String spielerName) throws IllegalArgumentException {
         lobby.addSpieler(spielerName);
     }
 
     @Override
-    public void removeSpieler(String name) {
+    public void removeSpieler(String name) throws IllegalArgumentException {
         lobby.removeSpieler(name);
     }
 

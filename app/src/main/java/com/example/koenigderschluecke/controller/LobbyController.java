@@ -14,15 +14,17 @@ public interface LobbyController {
      * Fügt einen neuen Spieler*in zur Lobby hinzu.
      *
      * @param spielerName Name des/der Spieler*in.
+     * @throws IllegalArgumentException Wenn der Spielername bereits vergeben ist, leer oder Null.
      */
-    void addSpieler(String spielerName);
+    void addSpieler(String spielerName) throws IllegalArgumentException;
 
     /**
      * Entfernt einen Spieler*in aus der Lobby.
      *
      * @param name Name des/der Spieler*in.
+     * @throws IllegalArgumentException Wenn der Spielername nicht in der Lobby ist. Oder leer/Null
      */
-    void removeSpieler(String name);
+    void removeSpieler(String name) throws IllegalArgumentException;
 
     /**
      * Gibt eine Liste aller Spieler*innen in der Lobby zurück.

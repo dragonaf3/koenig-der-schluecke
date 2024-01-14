@@ -1,5 +1,10 @@
 package com.example.koenigderschluecke.model;
 
+/**
+ * Enum für die Karten des Regelsets Hopfenhacker.
+ * Jede Karte besitzt eine Beschreibung, die im Spiel angezeigt wird.
+ * Die Beschreibung wird über die Methode getBeschreibung() abgerufen.
+ */
 public enum Hopfenhacker implements RegelBeschreiber {
     EINS("Trinke einen Schluck."),
     ZWEI("Trinke zwei Schlücke."),
@@ -18,6 +23,11 @@ public enum Hopfenhacker implements RegelBeschreiber {
 
     private final String beschreibung;
 
+    /**
+     * Der Konstruktor des Enums.
+     *
+     * @param beschreibung Entsprechende Regel der Karte
+     */
     Hopfenhacker(String beschreibung) {
         this.beschreibung = beschreibung;
     }

@@ -24,28 +24,28 @@ import java.util.Set;
 //TODO: Controller Auslagerung
 public class SpielBeitretenActivity extends AppCompatActivity {
 
-    @RequiresApi(api = Build.VERSION_CODES.S)
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_spiel_beitreten);
-
-        BluetoothConnector bluetoothConnector = new BluetoothConnectorImpl(this);
-        bluetoothConnector.bluetoothAktivierung();
-
-        // Broadcast
-        IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
-        registerReceiver(receiver, filter);
-
-        displayBluetoothDevices(bluetoothConnector.getBluetoothDevices());
-
-        Button zurueckZumHauptmenueSpielBeitretenButton = findViewById(R.id.zurueckZumHauptmenueSpielBeitretenButton);
-
-        zurueckZumHauptmenueSpielBeitretenButton.setOnClickListener(v -> {
-            Intent intent = new Intent(this, StartbildschirmActivity.class);
-            startActivity(intent);
-        });
-    }
+//    @RequiresApi(api = Build.VERSION_CODES.S)
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_spiel_beitreten);
+//
+//        BluetoothConnector bluetoothConnector = new BluetoothConnectorImpl(this);
+//        bluetoothConnector.bluetoothAktivierung();
+//
+//        // Broadcast
+//        IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
+//        registerReceiver(receiver, filter);
+//
+//        displayBluetoothDevices(bluetoothConnector.getBluetoothDevices());
+//
+//        Button zurueckZumHauptmenueSpielBeitretenButton = findViewById(R.id.zurueckZumHauptmenueSpielBeitretenButton);
+//
+//        zurueckZumHauptmenueSpielBeitretenButton.setOnClickListener(v -> {
+//            Intent intent = new Intent(this, StartbildschirmActivity.class);
+//            startActivity(intent);
+//        });
+//    }
 
     @SuppressLint("MissingPermission") //Wurde gecheckt
     private void displayBluetoothDevices(Set<BluetoothDevice> devices) {

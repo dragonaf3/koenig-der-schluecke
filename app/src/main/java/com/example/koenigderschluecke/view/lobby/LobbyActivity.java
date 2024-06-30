@@ -44,8 +44,14 @@ public class LobbyActivity extends AppCompatActivity {
                 .commit();
     }
 
-    public void starteMultiplayer() {
-        //TODO: Implementieren
+    public void starteSpielHost() {
+        SpielHostFragment spielHostFragment = new SpielHostFragment();
+        spielHostFragment.setLobbyController(this.lobbyController);
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, spielHostFragment)
+                .commit();
     }
 
     public void starteHauptspiel() {

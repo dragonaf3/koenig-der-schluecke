@@ -5,19 +5,13 @@ import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.os.Build;
-import android.os.Bundle;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.koenigderschluecke.R;
-import com.example.koenigderschluecke.network.BluetoothConnector;
-import com.example.koenigderschluecke.network.BluetoothConnectorImpl;
+
 
 import java.util.Set;
 

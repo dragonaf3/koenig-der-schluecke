@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 
 import com.example.koenigderschluecke.R;
 import com.example.koenigderschluecke.view.lobby.LobbyActivity;
+import com.example.koenigderschluecke.view.regelsets.RuleManagerActivity;
 import com.example.koenigderschluecke.view.spiel.HauptspielActivity;
 
 public class StartbildschirmActivity extends AppCompatActivity {
@@ -36,7 +37,8 @@ public class StartbildschirmActivity extends AppCompatActivity {
 
         //Definieren der OnClickListener
         neuesSpielButton.setOnClickListener(v -> startActivity(new Intent(this, LobbyActivity.class)));
-        spielBeitretenButton.setOnClickListener(v -> startActivity(new Intent(this, SpielBeitretenActivity.class)));
+        //TODO: Ändern!
+        spielBeitretenButton.setOnClickListener(v -> startActivity(new Intent(this, RuleManagerActivity.class)));
         statistikButton.setOnClickListener(v -> startActivity(new Intent(this, StatistikActivity.class)));
         einstellungenButton.setOnClickListener(v -> startActivity(new Intent(this, EinstellungenActivity.class)));
         beendenButton.setOnClickListener(v -> {

@@ -28,59 +28,52 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
-        android:hint="@string/dein_name"
+        android:layout_marginBottom="25dp"
+        android:hint="@string/lobby_name_eingeben"
         android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/zurueckZumHauptmenueButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/playerAddButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/black"
+        android:text="+"
+        app:layout_constraintBottom_toBottomOf="@+id/hostNameEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/startGameButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/black"
+        android:text="->"
+        app:layout_constraintBottom_toBottomOf="@+id/hostNameEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <ListView
+        android:id="@+id/deviceListView"
+        android:layout_width="409dp"
+        android:layout_height="240dp"
+        android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ueberschriftTextView" />
 
     <Button
-        android:id="@+id/bluetoothButton"
-        android:layout_width="250dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/grau_button_hintergrund"
-        android:text="@string/starte_bluetooth"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hostNameEditText" />
-
-    <ListView
-        android:id="@+id/deviceListView"
-        android:layout_width="410dp"
-        android:layout_height="160dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/startGameButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bluetoothButton"
-        app:layout_constraintVertical_bias="0.046"
-        tools:listitem="@android:layout/simple_list_item_1" />
-
-    <Button
-        android:id="@+id/startGameButton"
-        android:layout_width="250dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="@color/grau_button_hintergrund"
-        android:text="@string/spiel_starten"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/deviceListView" />
-
-    <Button
         android:id="@+id/zurueckZumHauptmenueButton"
         android:layout_width="250dp"
         android:layout_height="75dp"
-        android:layout_marginTop="15dp"
         android:layout_marginBottom="50dp"
         android:backgroundTint="@color/grau_button_hintergrund"
         android:text="@string/zurueck_zum_hauptmenue"
@@ -88,8 +81,6 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/startGameButton" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

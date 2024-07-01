@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -8,10 +9,23 @@
         android:id="@+id/buttonAddRuleSet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Rule Set" />
+        android:text="Add Rule Set"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:backgroundTint="@color/grau_button_hintergrund" />
 
     <ListView
         android:id="@+id/listViewRuleSets"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/zurueckZumHauptmenueButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="@color/grau_button_hintergrund"
+        android:text="@string/zurueck_zum_hauptmenue"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 </LinearLayout>

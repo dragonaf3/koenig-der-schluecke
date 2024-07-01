@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -67,6 +68,12 @@ public class RuleSetCreatorFragment extends Fragment {
         }
 
         view.findViewById(R.id.buttonSaveRuleSet).setOnClickListener(v -> saveRuleSet());
+
+        Button zurueckZumHauptmenueButton = view.findViewById(R.id.zurueckZumHauptmenueButton);
+
+        zurueckZumHauptmenueButton.setOnClickListener(zurueckZumHauptmenueAktion -> {
+            ((RuleSetActivity) getActivity()).zurueckZumHauptmenue();
+        });
 
         return view;
     }

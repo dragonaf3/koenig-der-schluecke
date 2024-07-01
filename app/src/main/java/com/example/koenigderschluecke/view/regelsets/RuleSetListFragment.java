@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -17,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import com.example.koenigderschluecke.R;
 import com.example.koenigderschluecke.db.RuleDatabaseHelper;
 import com.example.koenigderschluecke.model.RuleSet;
+import com.example.koenigderschluecke.view.lobby.LobbyActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,6 +57,13 @@ public class RuleSetListFragment extends Fragment {
         });
 
         loadRuleSets();
+
+        Button zurueckZumHauptmenueButton = view.findViewById(R.id.zurueckZumHauptmenueButton);
+
+        zurueckZumHauptmenueButton.setOnClickListener(zurueckZumHauptmenueAktion -> {
+            ((RuleSetActivity) getActivity()).zurueckZumHauptmenue();
+        });
+
         return view;
     }
 

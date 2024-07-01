@@ -13,7 +13,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import com.example.koenigderschluecke.R;
 import com.example.koenigderschluecke.view.lobby.LobbyActivity;
-import com.example.koenigderschluecke.view.lobby.SpielBeitretenFragment;
+import com.example.koenigderschluecke.view.regelsets.RuleSetActivity;
 
 import org.junit.After;
 import org.junit.Before;
@@ -44,9 +44,9 @@ public class StartbildschirmActivityTest {
     }
 
     @Test
-    public void clickingSpielBeitretenButtonOpensSpielBeitretenActivity() {
-        onView(withId(R.id.buttonSpielBeitreten)).perform(click());
-        Intents.intended(IntentMatchers.hasComponent(SpielBeitretenFragment.class.getName()));
+    public void clickingEigeneRegelnButtonOpensRuleSetActivity() {
+        onView(withId(R.id.buttonEigeneRegeln)).perform(click());
+        Intents.intended(IntentMatchers.hasComponent(RuleSetActivity.class.getName()));
     }
 
     @Test

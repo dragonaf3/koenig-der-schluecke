@@ -1,10 +1,8 @@
 package com.example.koenigderschluecke.view;
 
 import androidx.annotation.RequiresApi;
-import androidx.core.app.ActivityCompat;
 
 
-import android.Manifest;
 import android.app.Activity;
 
 import android.content.Intent;
@@ -25,13 +23,9 @@ public class StartbildschirmActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_startbildschirm);
 
-        //Permission Setzen hier, geht sonst nicht??
-        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.BLUETOOTH_CONNECT}, 2);
-        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
-
         //Erstellung der Elemente der Activity
         Button neuesSpielButton = findViewById(R.id.buttonNeuesSpiel);
-        Button regelSetButton = findViewById(R.id.buttonSpielBeitreten);
+        Button regelSetButton = findViewById(R.id.buttonEigeneRegeln);
         ImageButton statistikButton = findViewById(R.id.buttonStatistik);
         ImageButton einstellungenButton = findViewById(R.id.buttonEinstellungen);
         Button beendenButton = findViewById(R.id.buttonBeenden);

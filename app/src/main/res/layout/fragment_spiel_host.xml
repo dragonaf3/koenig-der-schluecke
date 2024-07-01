@@ -29,34 +29,24 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="20dp"
         android:hint="@string/lobby_name_eingeben"
         android:inputType="text"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/zurueckZumHauptmenueButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/playerAddButton"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="8dp"
-        android:backgroundTint="@color/black"
-        android:text="+"
-        app:layout_constraintBottom_toBottomOf="@+id/hostNameEditText"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/startGameButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="56dp"
         android:backgroundTint="@color/black"
         android:text="->"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/hostNameEditText"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="HardcodedText" />

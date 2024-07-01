@@ -1,5 +1,6 @@
 package com.example.koenigderschluecke.view;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -11,7 +12,10 @@ import com.example.koenigderschluecke.R;
 import com.example.koenigderschluecke.controller.PersistenzController;
 import com.example.koenigderschluecke.controller.PersistenzControllerImpl;
 
-public class StatistikActivity extends AppCompatActivity {
+/**
+ * Diese Activity zeigt die Statistik an. Es kann jederzeit zum Hauptmenü gegangen werden.
+ */
+public class StatistikActivity extends Activity {
     private PersistenzController persistenzController;
 
     @Override
@@ -36,5 +40,13 @@ public class StatistikActivity extends AppCompatActivity {
         });
 
         //TODO: Persistenz hier einfügen
+    }
+
+    /**
+     * Dient ausschließlich Testzwecke!
+     */
+    void setStatistik() {
+        TextView statistikAnzahlGesamtSpiele = findViewById(R.id.textViewStatistikAnzahlGesamtSpiele);
+        statistikAnzahlGesamtSpiele.setText("5");
     }
 }

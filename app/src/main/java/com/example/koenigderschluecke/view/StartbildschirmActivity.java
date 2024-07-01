@@ -4,7 +4,9 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
-import android.Manifest;
+
+import android.app.Activity;
+
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,7 +17,7 @@ import com.example.koenigderschluecke.R;
 import com.example.koenigderschluecke.view.lobby.LobbyActivity;
 import com.example.koenigderschluecke.view.regelsets.RuleSetActivity;
 
-public class StartbildschirmActivity extends AppCompatActivity {
+public class StartbildschirmActivity extends Activity {
 
     @RequiresApi(api = Build.VERSION_CODES.S)
     @Override

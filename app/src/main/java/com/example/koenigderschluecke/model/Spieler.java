@@ -9,8 +9,9 @@ public interface Spieler {
      * Setzt den Namen des Spielers.
      *
      * @param name Der Name des Spielers.
+     * @throws IllegalArgumentException Wenn der Name leer oder Null ist.
      */
-    void setName(String name);
+    void setName(String name) throws IllegalArgumentException;
 
     /**
      * Gibt den Namen des Spielers zurück.

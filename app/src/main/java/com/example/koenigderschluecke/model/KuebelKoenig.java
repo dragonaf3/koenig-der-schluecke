@@ -1,5 +1,10 @@
 package com.example.koenigderschluecke.model;
 
+/**
+ * Enum für die Karten des Regelsets KübelKönigs.
+ * Jede Karte besitzt eine Beschreibung, die im Spiel angezeigt wird.
+ * Die Beschreibung wird über die Methode getBeschreibung() abgerufen.
+ */
 public enum KuebelKoenig implements RegelBeschreiber {
     EINS("Trinke einen Schluck."),
     ZWEI("Verteile zwei Schlücke."),
@@ -18,6 +23,11 @@ public enum KuebelKoenig implements RegelBeschreiber {
 
     private final String beschreibung;
 
+    /**
+     * Der Konstruktor des Enums.
+     *
+     * @param beschreibung Entsprechende Regel der Karte
+     */
     KuebelKoenig(String beschreibung) {
         this.beschreibung = beschreibung;
     }

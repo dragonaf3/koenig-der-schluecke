@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Spinner;
+
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -58,7 +58,12 @@ public class SingleplayerFragment extends Fragment {
                 namesAdapter.notifyDataSetChanged();
                 nameEditText.setText("");
 
-                lobbyController.addSpieler(name);
+                try {
+                    lobbyController.addSpieler(name);
+                } catch (IllegalArgumentException e) {
+                    Toast.makeText(getActivity(), "Name darf nicht leer oder bereits vorhanden sein!", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 

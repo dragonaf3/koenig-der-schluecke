@@ -1,5 +1,10 @@
 package com.example.koenigderschluecke.model;
 
+/**
+ * Enum für die Karten des Regelsets RauschRitter.
+ * Jede Karte besitzt eine Beschreibung, die im Spiel angezeigt wird.
+ * Die Beschreibung wird über die Methode getBeschreibung() abgerufen.
+ */
 public enum RauschRitter implements RegelBeschreiber {
     ZWEI("Schlücke in Höhe der Karte verteilen."),
     DREI("Schlücke in Höhe der Karte verteilen."),
@@ -17,6 +22,11 @@ public enum RauschRitter implements RegelBeschreiber {
 
     private final String beschreibung;
 
+    /**
+     * Der Konstruktor des Enums.
+     *
+     * @param beschreibung Entsprechende Regel der Karte
+     */
     RauschRitter(String beschreibung) {
         this.beschreibung = beschreibung;
     }

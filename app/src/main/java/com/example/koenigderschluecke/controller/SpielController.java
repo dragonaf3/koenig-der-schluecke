@@ -61,9 +61,9 @@ public interface SpielController {
 
     /**
      * Leitet die nächste Runde im Spiel ein.
-     *
+     * @throws IllegalArgumentException wenn keine Spieler*innen vorhanden sind.
      */
-    void naechsteRunde();
+    void naechsteRunde() throws IllegalArgumentException;
 
     /**
      * Gibt die Anzahl der gezogenen Karten zurück.

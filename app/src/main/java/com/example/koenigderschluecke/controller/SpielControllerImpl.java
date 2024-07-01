@@ -1,13 +1,11 @@
 package com.example.koenigderschluecke.controller;
 
-import com.example.koenigderschluecke.exceptions.KartenstapelLeerException;
 import com.example.koenigderschluecke.model.Hopfenhacker;
 import com.example.koenigderschluecke.model.Karte;
 import com.example.koenigderschluecke.model.KuebelKoenig;
 import com.example.koenigderschluecke.model.RauschRitter;
 import com.example.koenigderschluecke.model.Spiel;
 import com.example.koenigderschluecke.model.SpielSingleton;
-import com.example.koenigderschluecke.model.Spieler;
 
 import java.util.List;
 
@@ -85,7 +83,7 @@ public class SpielControllerImpl implements SpielController {
     }
 
     @Override
-    public void naechsteRunde() {
+    public void naechsteRunde() throws IllegalArgumentException {
         if (spiel.getSpielerListe().isEmpty()) {
             throw new IllegalStateException("Es sind keine Spieler*innen im Spiel.");
         }

@@ -1,5 +1,6 @@
 package com.example.koenigderschluecke.view;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -12,7 +13,10 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.Objects;
 
-public class FeedbackActivity extends AppCompatActivity {
+/**
+ * Diese Activity ist für die Feedback-Seite zuständig.
+ */
+public class FeedbackActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

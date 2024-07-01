@@ -40,20 +40,35 @@ public class LobbyImpl implements Lobby {
      * Fügt einen neuen Spieler zur Spielerliste hinzu und erhöht die Anzahl der Spieler um eins.
      *
      * @param name Der Name des hinzuzufügenden Spielers
+     * @throws IllegalArgumentException Wenn der Spielername bereits vergeben ist, leer oder Null.
      */
     @Override
     public void addSpieler(String name) {
+        for (Spieler spieler : spielerList) {
+            if (spieler.getName().equals(name)) {
+                throw new IllegalArgumentException("Name ist bereits vergeben.");
+            }
+        }
+
         spielerList.add(new SpielerImpl(name));
         anzahlSpieler++;
     }
 
     /**
-     * Entfernt den letzten Spieler aus der Spielerliste und verringert die Anzahl der Spieler um eins.
+     * Entfernt einen Spieler aus der Spielerliste und verringert die Anzahl der Spieler um eins.
      *
      * @param name Der Name des zu entfernenden Spielers
+     * @throws IllegalArgumentException Wenn der Spielername nicht in der Lobby ist. Oder leer/Null
      */
     @Override
-    public void removeSpieler(String name) {
+    public void removeSpieler(String name) throws IllegalArgumentException {
+        if (name == null || name.isEmpty()) {
+            throw new IllegalArgumentException("Name darf nicht leer oder null sein.");
+        }
+        if (spielerList.stream().noneMatch(spieler -> spieler.getName().equals(name))) {
+            throw new IllegalArgumentException("Name ist nicht in der Lobby.");
+        }
+
         spielerList.removeIf(spieler -> spieler.getName().equals(name));
         anzahlSpieler--;
     }

@@ -140,6 +140,7 @@
         android:layout_height="263dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="13dp"
+        android:background="@drawable/spielbeendet"
         app:layout_constraintBottom_toTopOf="@+id/buttonZurueckZumHauptmenueSpielendeFragmentSeite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"

@@ -68,6 +68,22 @@ public class SpielSingleton implements Spiel {
         initialisiereKartenstapelMitBestimmtenRegelSet(regelSet);
     }
 
+    /**
+     * Dient ausschließlich zu Testzwecken, sollte nach dem testen entfernt werden!
+     * @param instance Die Instanz des Spiels, die gesetzt werden soll.
+     */
+    public static void setInstance(Spiel instance) {
+        SpielSingleton.instance = instance;
+    }
+
+    /**
+     * Diese Methode liefert die Instanz des Spiels zurück. Sie dient dem Testen!
+     * @return Die Instanz des Spiels.
+     */
+    public static Spiel getInstance() {
+        return instance;
+    }
+
     @Override
     public List<Spieler> getSpielerListe() {
         return spielerListe;

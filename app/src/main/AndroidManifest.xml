@@ -52,7 +52,7 @@
 
         <activity android:name=".view.lobby.LobbyActivity"></activity>
 
-        <activity android:name=".view.regelsets.RuleManagerActivity"></activity>
+        <activity android:name=".view.regelsets.RuleSetActivity"></activity>
 
     </application>
 

@@ -1,211 +1,95 @@
 package com.example.koenigderschluecke.view;
 
-import android.Manifest;
-
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.SurfaceTexture;
-import android.hardware.camera2.CameraAccessException;
-import android.hardware.camera2.CameraCaptureSession;
-import android.hardware.camera2.CameraDevice;
-import android.hardware.camera2.CameraManager;
-import android.hardware.camera2.CaptureRequest;
+import android.net.wifi.p2p.WifiP2pDevice;
+import android.net.wifi.p2p.WifiP2pInfo;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Handler;
-import android.os.HandlerThread;
-import android.view.Surface;
-import android.view.TextureView;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.koenigderschluecke.R;
+import com.example.koenigderschluecke.network.WifiDirectCommunication;
+import com.example.koenigderschluecke.network.WifiDirectCommunicationImpl;
+import com.example.koenigderschluecke.network.WifiDirectListener;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collection;
 
-//TODO: Controller Auslagerung
-public class SpielBeitretenActivity extends AppCompatActivity {
+public class SpielBeitretenActivity extends AppCompatActivity implements WifiDirectListener {
 
-    private TextureView textureView;
-    private CameraDevice cameraDevice;
-    private CameraCaptureSession captureSession;
-    private Handler backgroundHandler;
-    private HandlerThread backgroundThread;
-    private static final int REQUEST_CAMERA_PERMISSION = 200;
+    private WifiDirectCommunication wifiDirectCommunication;
+    private LinearLayout linearLayout;
+    private ArrayList<WifiP2pDevice> availableDevices = new ArrayList<>();
+    private EditText playerNameEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spiel_beitreten);
 
-        textureView = findViewById(R.id.camera_preview);
-        textureView.setSurfaceTextureListener(surfaceTextureListener);
+        linearLayout = findViewById(R.id.linear_layout);
+        playerNameEditText = findViewById(R.id.playerNameEditText);
 
-        Button zurueckZumHauptmenueButton = findViewById(R.id.buttonZurueckZumHauptmenueSpielBeitretenSeite);
+        wifiDirectCommunication = new WifiDirectCommunicationImpl();
+        wifiDirectCommunication.initialize(this);
+        wifiDirectCommunication.setListener(this);
+        wifiDirectCommunication.discoverPeers();
 
-        zurueckZumHauptmenueButton.setOnClickListener(v -> startActivity(new Intent(this, StartbildschirmActivity.class)));
+        Button zurueckZumHauptmenueButton = findViewById(R.id.zurueckZumHauptmenueSpielBeitretenButton);
+        zurueckZumHauptmenueButton.setOnClickListener(v -> finish());
     }
-
-    private final TextureView.SurfaceTextureListener surfaceTextureListener = new TextureView.SurfaceTextureListener() {
-        @Override
-        public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
-            // Kamera öffnen
-            openCamera();
-        }
-
-        @Override
-        public void onSurfaceTextureSizeChanged(@NonNull SurfaceTexture surface, int width, int height) {
-
-        }
-
-        @Override
-        public boolean onSurfaceTextureDestroyed(@NonNull SurfaceTexture surface) {
-            return false;
-        }
-
-        @Override
-        public void onSurfaceTextureUpdated(@NonNull SurfaceTexture surface) {
-
-        }
-
-        // ... (überspringen Sie andere nicht implementierte Methoden für die Klarheit)
-    };
-
-    private void openCamera() {
-        if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(new String[]{Manifest.permission.CAMERA}, REQUEST_CAMERA_PERMISSION);
-            return;
-        }
-
-        CameraManager cameraManager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
-        try {
-            String cameraId = cameraManager.getCameraIdList()[0];
-            cameraManager.openCamera(cameraId, stateCallback, backgroundHandler);
-        } catch (CameraAccessException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private final CameraDevice.StateCallback stateCallback = new CameraDevice.StateCallback() {
-        @Override
-        public void onOpened(CameraDevice camera) {
-            cameraDevice = camera;
-            startPreview();
-        }
-
-        @Override
-        public void onDisconnected(@NonNull CameraDevice camera) {
-
-        }
-
-        @Override
-        public void onError(@NonNull CameraDevice camera, int error) {
-
-        }
-
-        // ... (überspringen Sie andere nicht implementierte Methoden für die Klarheit)
-    };
-
-    private void startPreview() {
-        SurfaceTexture surfaceTexture = textureView.getSurfaceTexture();
-        Surface surface = new Surface(surfaceTexture);
-        try {
-            CaptureRequest.Builder captureRequestBuilder = cameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_PREVIEW);
-            captureRequestBuilder.addTarget(surface);
-            CaptureRequest request = captureRequestBuilder.build();
-            cameraDevice.createCaptureSession(Arrays.asList(surface), sessionCallback, backgroundHandler);
-        } catch (CameraAccessException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private final CameraCaptureSession.StateCallback sessionCallback = new CameraCaptureSession.StateCallback() {
-        @Override
-        public void onConfigured(CameraCaptureSession session) {
-            captureSession = session;
-            try {
-                CaptureRequest.Builder captureRequestBuilder = cameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_PREVIEW);
-                SurfaceTexture surfaceTexture = textureView.getSurfaceTexture();
-                Surface surface = new Surface(surfaceTexture);
-                captureRequestBuilder.addTarget(surface);
-                CaptureRequest request = captureRequestBuilder.build();
-                captureSession.setRepeatingRequest(request, null, backgroundHandler);
-            } catch (CameraAccessException e) {
-                e.printStackTrace();
-            }
-        }
-
-        @Override
-        public void onConfigureFailed(@NonNull CameraCaptureSession session) {
-
-        }
-
-        // ... (überspringen Sie andere nicht implementierte Methoden für die Klarheit)
-    };
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        startBackgroundThread();
-        if (textureView.isAvailable()) {
-            openCamera();
-        } else {
-            textureView.setSurfaceTextureListener(surfaceTextureListener);
-        }
+    public void onPeersAvailable(Collection<WifiP2pDevice> peerList) {
+        availableDevices.clear();
+        availableDevices.addAll(peerList);
+        displayAvailableDevices();
     }
-
 
     @Override
-    protected void onPause() {
-        closeCamera();
-        stopBackgroundThread();
-        super.onPause();
-    }
-
-    private void startBackgroundThread() {
-        backgroundThread = new HandlerThread("Camera Background");
-        backgroundThread.start();
-        backgroundHandler = new Handler(backgroundThread.getLooper());
-    }
-
-    private void stopBackgroundThread() {
-        backgroundThread.quitSafely();
-        try {
-            backgroundThread.join();
-            backgroundThread = null;
-            backgroundHandler = null;
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void closeCamera() {
-        if (captureSession != null) {
-            captureSession.close();
-            captureSession = null;
-        }
-        if (cameraDevice != null) {
-            cameraDevice.close();
-            cameraDevice = null;
+    public void onConnectionInfoAvailable(WifiP2pInfo info) {
+        if (info.groupFormed && !info.isGroupOwner) {
+            Toast.makeText(this, "Mit dem Host verbunden", Toast.LENGTH_SHORT).show();
+            sendDataToHost("PlayerName:" + playerNameEditText.getText().toString());
         }
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == REQUEST_CAMERA_PERMISSION) {
-            if (grantResults[0] == PackageManager.PERMISSION_DENIED) {
-                // Benutzer hat die Kameraberechtigung abgelehnt, informieren Sie ihn darüber
-                Toast.makeText(this, "Sie können diese Funktion nicht verwenden, ohne die Kameraberechtigung zu gewähren.", Toast.LENGTH_SHORT).show();
-                finish(); // Oder handhaben Sie dies nach Ihren Wünschen
-            } else {
-                // Die Kameraberechtigung wurde gewährt, Sie können die Kamera öffnen
-                openCamera();
-            }
+    public void onDataReceived(String data) {
+        //TODO: Implementieren
+    }
+
+    private void displayAvailableDevices() {
+        linearLayout.removeAllViews();
+        for (WifiP2pDevice device : availableDevices) {
+            TextView deviceView = new TextView(this);
+            deviceView.setText(device.deviceName);
+            deviceView.setPadding(16, 16, 16, 16);
+            deviceView.setLayoutParams(new ViewGroup.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+            ));
+            deviceView.setOnClickListener(v -> connectToDevice(device));
+            linearLayout.addView(deviceView);
         }
+    }
+
+    private void connectToDevice(WifiP2pDevice device) {
+        wifiDirectCommunication.connectToPeer(device);
+    }
+
+    private void sendDataToHost(String data) {
+        wifiDirectCommunication.sendData(data);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        wifiDirectCommunication.cleanup();
     }
 }

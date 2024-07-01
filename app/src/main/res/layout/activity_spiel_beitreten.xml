@@ -6,22 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/buttonZurueckZumHauptmenueSpielBeitretenSeite"
-        android:layout_width="200dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="46dp"
-        android:layout_marginBottom="50dp"
-        android:contentDescription="@string/zurueck_zum_hauptmen"
-        android:text="@string/zurueck_zum_hauptmenue"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:backgroundTint="@color/grau_button_hintergrund"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
-
     <TextView
         android:id="@+id/spielBeitretenUeberschrift"
         android:layout_width="320dp"
@@ -33,48 +17,56 @@
         android:fontFamily="sans-serif-black"
         android:text="@string/koenig_der_schluecke"
         android:textAlignment="center"
-
         android:textColor="@color/black"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textQRCodeScannen"
-        android:layout_width="280dp"
+    <EditText
+        android:id="@+id/playerNameEditText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="55dp"
-        android:text="@string/scanne_hier_den_qr_code"
-        android:textAlignment="textStart"
-        android:textColor="@color/black"
-        android:textSize="34sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/dein_name"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spielBeitretenUeberschrift" />
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="280dp"
-        android:layout_height="280dp"
-        android:layout_marginTop="25dp"
-        android:background="@android:color/black"
+    <ScrollView
+        android:id="@+id/bluetoothDevicesView"
+        android:layout_width="300dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerNameEditText">
+
+        <LinearLayout
+            android:id="@+id/linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!-- Dynamisch hinzugefügte Views kommen hier -->
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/zurueckZumHauptmenueSpielBeitretenButton"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="50dp"
+        android:contentDescription="@string/zurueck_zum_hauptmen"
+        android:text="@string/zurueck_zum_hauptmenue"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:backgroundTint="@color/grau_button_hintergrund"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textQRCodeScannen"
-        app:layout_constraintVertical_bias="0.0">
-
-        <!-- Kamera-Vorschau -->
-        <TextureView
-            android:id="@+id/camera_preview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </FrameLayout>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

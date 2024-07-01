@@ -10,7 +10,7 @@
         android:layout_width="320dp"
         android:layout_height="130dp"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="45dp"
         android:contentDescription="@string/ueberschrift_koenig_der_schluecke"
         android:fontFamily="sans-serif-black"
@@ -27,7 +27,7 @@
         android:id="@+id/singleplayerButton"
         android:layout_width="250dp"
         android:layout_height="75dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:backgroundTint="@color/grau_button_hintergrund"
         android:text="@string/singleplayer_auswahl"
         android:textColor="@color/black"
@@ -37,17 +37,30 @@
         app:layout_constraintTop_toBottomOf="@+id/ueberschriftTextView" />
 
     <Button
-        android:id="@+id/multiplayerButton"
+        android:id="@+id/spielHostButton"
         android:layout_width="250dp"
         android:layout_height="75dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/grau_button_hintergrund"
-        android:text="@string/multiplayer_auswahl"
+        android:text="@string/spiel_erstellen"
         android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/singleplayerButton" />
+
+    <Button
+        android:id="@+id/spielBeitretenButton"
+        android:layout_width="250dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/grau_button_hintergrund"
+        android:text="@string/spiel_beitreten"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spielHostButton" />
 
     <Button
         android:id="@+id/zurueckZumHauptmenueButton"

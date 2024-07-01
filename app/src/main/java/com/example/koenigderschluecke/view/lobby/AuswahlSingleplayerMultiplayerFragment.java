@@ -9,7 +9,6 @@ import android.widget.Button;
 import androidx.fragment.app.Fragment;
 
 import com.example.koenigderschluecke.R;
-import com.example.koenigderschluecke.controller.LobbyController;
 
 public class AuswahlSingleplayerMultiplayerFragment extends Fragment {
 
@@ -19,15 +18,21 @@ public class AuswahlSingleplayerMultiplayerFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_auswahl_singleplayer_multiplayer, container, false);
 
         Button singleplayerButton = view.findViewById(R.id.singleplayerButton);
-        Button multiplayerButton = view.findViewById(R.id.multiplayerButton);
+        Button spielHostButton = view.findViewById(R.id.spielHostButton);
+        Button spielBeitretenButton = view.findViewById(R.id.spielBeitretenButton);
         Button zurueckZumHauptmenueButton = view.findViewById(R.id.zurueckZumHauptmenueButton);
 
         singleplayerButton.setOnClickListener(singleplayerAktion -> {
             ((LobbyActivity) getActivity()).starteSingleplayer();
         });
 
-        multiplayerButton.setOnClickListener(multiplayerAktion -> {
-            ((LobbyActivity) getActivity()).starteMultiplayer();
+        //TODO: spielHostButton und spielBeitretenButton
+        spielHostButton.setOnClickListener(multiplayerAktion -> {
+            ((LobbyActivity) getActivity()).starteSpielHost();
+        });
+
+        spielBeitretenButton.setOnClickListener(multiplayerAktion -> {
+            ((LobbyActivity) getActivity()).starteSpielHost();
         });
 
         zurueckZumHauptmenueButton.setOnClickListener(zurueckZumHauptmenueAktion -> {

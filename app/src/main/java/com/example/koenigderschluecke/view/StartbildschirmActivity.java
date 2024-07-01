@@ -1,10 +1,10 @@
 package com.example.koenigderschluecke.view;
 
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 
+import android.Manifest;
 import android.app.Activity;
 
 import android.content.Intent;

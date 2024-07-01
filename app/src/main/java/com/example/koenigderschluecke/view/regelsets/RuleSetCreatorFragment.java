@@ -1,6 +1,5 @@
 package com.example.koenigderschluecke.view.regelsets;
 
-import static java.security.AccessController.getContext;
 
 import android.content.ContentValues;
 import android.database.Cursor;

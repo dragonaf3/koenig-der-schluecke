@@ -25,6 +25,13 @@ public interface PersistenzController {
     String ladeSpielendeStatistik();
 
     /**
+     * Lädt die gezogenen Karten seit App-Start oder Statistik Reset.
+     *
+     * @return Anzahl der gezogenen Karten
+     */
+    String ladeGezogeneKarten();
+
+    /**
      * Resettet die Statistik.
      */
     void resetStatistik();

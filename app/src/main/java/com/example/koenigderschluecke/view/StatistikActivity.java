@@ -27,16 +27,19 @@ public class StatistikActivity extends Activity {
 
         //Erstellung der Elemente der Activity
         TextView statistikAnzahlGesamtSpiele = findViewById(R.id.textViewStatistikAnzahlGesamtSpiele);
-        TextView anzahlGesamtKarten = findViewById(R.id.textViewStatistikAnzahlGesamtSpiele);
+        TextView anzahlGesamtKarten = findViewById(R.id.textViewAnzahlGesamtKarten);
         Button statistikLoeschen = findViewById(R.id.buttonStatistikLoeschen);
         Button zurueckZumHauptmenueButton = findViewById(R.id.buttonZurueckZumHauptmenueStatistikSeite);
 
         statistikAnzahlGesamtSpiele.setText(persistenzController.ladeSpielendeStatistik());
+        anzahlGesamtKarten.setText(persistenzController.ladeGezogeneKarten());
 
         zurueckZumHauptmenueButton.setOnClickListener(v -> startActivity(new Intent(this, StartbildschirmActivity.class)));
+
         statistikLoeschen.setOnClickListener(statistikLoeschenAktion -> {
             persistenzController.resetStatistik();
             statistikAnzahlGesamtSpiele.setText(persistenzController.ladeSpielendeStatistik());
+            anzahlGesamtKarten.setText(persistenzController.ladeGezogeneKarten());
         });
 
         //TODO: Persistenz hier einfügen

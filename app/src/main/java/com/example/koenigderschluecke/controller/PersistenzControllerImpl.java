@@ -105,6 +105,11 @@ public class PersistenzControllerImpl implements PersistenzController {
         return Integer.toString(anzahlGespielteSpiele);
     }
 
+    @Override
+    public String ladeGezogeneKarten() {
+        return Integer.toString(anzahlGezogeneKarten);
+    }
+
     /**
      * Setzt die Statistik zurück.
      */

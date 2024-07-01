@@ -1,0 +1,30 @@
+<!-- res/layout/activity_card_rule_manager.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editTextCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Card (e.g., Ace, Two, Three, ...)" />
+
+    <EditText
+        android:id="@+id/editTextRuleDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Rule Description" />
+
+    <Button
+        android:id="@+id/buttonAddCardRule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Card Rule" />
+
+    <ListView
+        android:id="@+id/listViewCardRules"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

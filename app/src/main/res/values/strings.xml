@@ -41,4 +41,9 @@
     <string name="singleplayer_auswahl">Singleplayer</string>
     <string name="multiplayer_auswahl">Multiplayer</string>
     <string name="lobby_name_eingeben">Name eingeben</string>
+    <string name="spiel_beitreten">SPIEL BEITRETEN</string>
+    <string name="spiel_erstellen">SPIEL ERSTELLEN</string>
+    <string name="dein_name">Dein Name</string>
+    <string name="starte_bluetooth">Starte Bluetooth</string>
+    <string name="spiel_starten">Spiel starten</string>
 </resources>

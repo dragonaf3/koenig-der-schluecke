@@ -1,0 +1,177 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editTextRuleSetName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rule Set Name" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Eins" />
+
+        <EditText
+            android:id="@+id/editTextRuleCard1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rule for Eins" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Zwei" />
+
+        <EditText
+            android:id="@+id/editTextRuleCard2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rule for Zwei" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Drei" />
+
+        <EditText
+            android:id="@+id/editTextRuleCard3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rule for Drei" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vier" />
+
+        <EditText
+            android:id="@+id/editTextRuleCard4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rule for Vier" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fünf" />
+
+        <EditText
+            android:id="@+id/editTextRuleCard5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rule for Fünf" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sechs" />
+
+        <EditText
+            android:id="@+id/editTextRuleCard6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rule for Sechs" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sieben" />
+
+        <EditText
+            android:id="@+id/editTextRuleCard7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rule for Sieben" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Acht" />
+
+        <EditText
+            android:id="@+id/editTextRuleCard8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rule for Acht" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Neun" />
+
+        <EditText
+            android:id="@+id/editTextRuleCard9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rule for Neun" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Zehn" />
+
+        <EditText
+            android:id="@+id/editTextRuleCard10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rule for Zehn" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bube" />
+
+        <EditText
+            android:id="@+id/editTextRuleCardJack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rule for Bube" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dame" />
+
+        <EditText
+            android:id="@+id/editTextRuleCardQueen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rule for Dame" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="König" />
+
+        <EditText
+            android:id="@+id/editTextRuleCardKing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rule for König" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ass" />
+
+        <EditText
+            android:id="@+id/editTextRuleCardAce"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rule for Ass" />
+
+        <Button
+            android:id="@+id/buttonSaveRuleSet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Rule Set" />
+    </LinearLayout>
+</ScrollView>

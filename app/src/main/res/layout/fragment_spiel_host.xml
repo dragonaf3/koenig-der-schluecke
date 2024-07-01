@@ -1,20 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <Button
-        android:id="@+id/playerAddButton"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="8dp"
-        android:backgroundTint="@color/black"
-        android:text="+"
-        app:layout_constraintBottom_toBottomOf="@+id/nameEditText"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/ueberschriftTextView"
@@ -34,6 +23,53 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/hostNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="25dp"
+        android:hint="@string/lobby_name_eingeben"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/zurueckZumHauptmenueButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/playerAddButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/black"
+        android:text="+"
+        app:layout_constraintBottom_toBottomOf="@+id/hostNameEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/startGameButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/black"
+        android:text="->"
+        app:layout_constraintBottom_toBottomOf="@+id/hostNameEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <ListView
+        android:id="@+id/deviceListView"
+        android:layout_width="409dp"
+        android:layout_height="240dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ueberschriftTextView" />
+
     <Button
         android:id="@+id/zurueckZumHauptmenueButton"
         android:layout_width="250dp"
@@ -47,52 +83,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/nameEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="25dp"
-        android:autofillHints="Name"
-        android:hint="@string/lobby_name_eingeben"
-        android:inputType="text"
-        android:minHeight="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/zurueckZumHauptmenueButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Spinner
-        android:id="@+id/ruleSetSpinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="30dp"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/nameEditText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/startGameButton"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="8dp"
-        android:backgroundTint="@color/black"
-        android:text="->"
-        app:layout_constraintBottom_toBottomOf="@+id/nameEditText"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="HardcodedText" />
-
-    <ListView
-        android:id="@+id/namesListView"
-        android:layout_width="409dp"
-        android:layout_height="240dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ueberschriftTextView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

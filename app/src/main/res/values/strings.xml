@@ -46,4 +46,5 @@
     <string name="dein_name">Dein Name</string>
     <string name="starte_bluetooth">Starte Bluetooth</string>
     <string name="spiel_starten">Spiel starten</string>
+    <string name="eigene_regeln">EIGENE REGELN</string>
 </resources>

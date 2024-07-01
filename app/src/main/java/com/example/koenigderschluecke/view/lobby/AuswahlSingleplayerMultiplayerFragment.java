@@ -32,7 +32,7 @@ public class AuswahlSingleplayerMultiplayerFragment extends Fragment {
         });
 
         spielBeitretenButton.setOnClickListener(multiplayerAktion -> {
-            ((LobbyActivity) getActivity()).starteSpielHost();
+            ((LobbyActivity) getActivity()).starteSpielBeitreten();
         });
 
         zurueckZumHauptmenueButton.setOnClickListener(zurueckZumHauptmenueAktion -> {

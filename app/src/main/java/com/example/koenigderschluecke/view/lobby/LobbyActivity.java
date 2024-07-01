@@ -54,6 +54,15 @@ public class LobbyActivity extends FragmentActivity {
                 .commit();
     }
 
+    public void starteSpielBeitreten() {
+        SpielBeitretenFragment spielBeitretenFragment = new SpielBeitretenFragment();
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, spielBeitretenFragment)
+                .commit();
+    }
+
     public void starteHauptspiel() {
         try {
             lobbyController.starteSpiel();

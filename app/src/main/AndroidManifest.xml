@@ -42,7 +42,7 @@
 
         <activity android:name=".view.spiel.HauptspielActivity"></activity>
 
-        <activity android:name=".view.SpielBeitretenActivity"></activity>
+        <activity android:name=".view.lobby.SpielBeitretenFragment"></activity>
 
         <activity android:name=".view.StatistikActivity"></activity>
 

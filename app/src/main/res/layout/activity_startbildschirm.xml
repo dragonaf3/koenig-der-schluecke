@@ -89,7 +89,7 @@
         android:id="@+id/buttonSpielBeitreten"
         android:layout_width="200dp"
         android:layout_height="80dp"
-        android:text="@string/spiel_beitreten_button"
+        android:text="@string/eigene_regeln"
         android:textColor="@color/black"
         android:textSize="24sp"
         app:backgroundTint="@color/grau_button_hintergrund"

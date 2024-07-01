@@ -12,9 +12,9 @@
         tools:layout="@layout/activity_startbildschirm" />
     <activity
         android:id="@+id/spielBeitreten"
-        android:name="com.example.koenigderschluecke.view.SpielBeitretenActivity"
+        android:name="com.example.koenigderschluecke.view.lobby.SpielBeitretenFragment"
         android:label="SpielBeitreten"
-        tools:layout="@layout/activity_spiel_beitreten"/>
+        tools:layout="@layout/fragment_spiel_beitreten"/>
 
 
 </navigation>

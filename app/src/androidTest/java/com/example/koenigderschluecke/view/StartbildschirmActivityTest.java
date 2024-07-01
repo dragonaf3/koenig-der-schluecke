@@ -13,6 +13,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import com.example.koenigderschluecke.R;
 import com.example.koenigderschluecke.view.lobby.LobbyActivity;
+import com.example.koenigderschluecke.view.lobby.SpielBeitretenFragment;
 
 import org.junit.After;
 import org.junit.Before;
@@ -45,7 +46,7 @@ public class StartbildschirmActivityTest {
     @Test
     public void clickingSpielBeitretenButtonOpensSpielBeitretenActivity() {
         onView(withId(R.id.buttonSpielBeitreten)).perform(click());
-        Intents.intended(IntentMatchers.hasComponent(SpielBeitretenActivity.class.getName()));
+        Intents.intended(IntentMatchers.hasComponent(SpielBeitretenFragment.class.getName()));
     }
 
     @Test

@@ -1,10 +1,13 @@
-package com.example.koenigderschluecke.view;
+package com.example.koenigderschluecke.view.lobby;
 
 import android.net.wifi.p2p.WifiP2pDevice;
 import android.net.wifi.p2p.WifiP2pInfo;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,7 +23,7 @@ import com.example.koenigderschluecke.network.WifiDirectListener;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class SpielBeitretenActivity extends AppCompatActivity implements WifiDirectListener {
+public class SpielBeitretenFragment extends Fragment implements WifiDirectListener {
 
     private WifiDirectCommunication wifiDirectCommunication;
     private LinearLayout linearLayout;
@@ -28,20 +31,26 @@ public class SpielBeitretenActivity extends AppCompatActivity implements WifiDir
     private EditText playerNameEditText;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_spiel_beitreten);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_spiel_beitreten, container, false);
 
-        linearLayout = findViewById(R.id.linear_layout);
-        playerNameEditText = findViewById(R.id.playerNameEditText);
+
+        linearLayout = view.findViewById(R.id.linear_layout);
+        playerNameEditText = view.findViewById(R.id.playerNameEditText);
+        Button zurueckZumHauptmenueButton = view.findViewById(R.id.zurueckZumHauptmenueSpielBeitretenButton);
 
         wifiDirectCommunication = new WifiDirectCommunicationImpl();
-        wifiDirectCommunication.initialize(this);
+        wifiDirectCommunication.initialize(getActivity());
         wifiDirectCommunication.setListener(this);
         wifiDirectCommunication.discoverPeers();
 
-        Button zurueckZumHauptmenueButton = findViewById(R.id.zurueckZumHauptmenueSpielBeitretenButton);
-        zurueckZumHauptmenueButton.setOnClickListener(v -> finish());
+
+        zurueckZumHauptmenueButton.setOnClickListener(zurueckZumHauptmenueAktion -> {
+            ((LobbyActivity) getActivity()).zurueckZumHauptmenue();
+        });
+
+        return view;
     }
 
     @Override
@@ -54,7 +63,7 @@ public class SpielBeitretenActivity extends AppCompatActivity implements WifiDir
     @Override
     public void onConnectionInfoAvailable(WifiP2pInfo info) {
         if (info.groupFormed && !info.isGroupOwner) {
-            Toast.makeText(this, "Mit dem Host verbunden", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Mit dem Host verbunden", Toast.LENGTH_SHORT).show();
             sendDataToHost("PlayerName:" + playerNameEditText.getText().toString());
         }
     }
@@ -67,7 +76,7 @@ public class SpielBeitretenActivity extends AppCompatActivity implements WifiDir
     private void displayAvailableDevices() {
         linearLayout.removeAllViews();
         for (WifiP2pDevice device : availableDevices) {
-            TextView deviceView = new TextView(this);
+            TextView deviceView = new TextView(getActivity());
             deviceView.setText(device.deviceName);
             deviceView.setPadding(16, 16, 16, 16);
             deviceView.setLayoutParams(new ViewGroup.LayoutParams(
@@ -88,7 +97,7 @@ public class SpielBeitretenActivity extends AppCompatActivity implements WifiDir
     }
 
     @Override
-    protected void onDestroy() {
+    public void onDestroy() {
         super.onDestroy();
         wifiDirectCommunication.cleanup();
     }

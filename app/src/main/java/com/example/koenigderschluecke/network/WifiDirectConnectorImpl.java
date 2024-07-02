@@ -6,7 +6,6 @@ import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.IntentFilter;
-import android.graphics.Bitmap;
 import android.net.wifi.p2p.WifiP2pConfig;
 import android.net.wifi.p2p.WifiP2pDevice;
 import android.net.wifi.p2p.WifiP2pManager;
@@ -16,7 +15,7 @@ import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 
-public class WifiDirectCommunicationImpl implements WifiDirectCommunication {
+public class WifiDirectConnectorImpl implements WifiDirectConnector {
     private Context context;
     private WifiP2pManager manager;
     private WifiP2pManager.Channel channel;

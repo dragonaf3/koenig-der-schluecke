@@ -16,8 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.koenigderschluecke.R;
-import com.example.koenigderschluecke.network.WifiDirectCommunication;
-import com.example.koenigderschluecke.network.WifiDirectCommunicationImpl;
+import com.example.koenigderschluecke.network.WifiDirectConnector;
+import com.example.koenigderschluecke.network.WifiDirectConnectorImpl;
 import com.example.koenigderschluecke.network.WifiDirectListener;
 
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ import java.util.Collection;
 
 public class SpielBeitretenFragment extends Fragment implements WifiDirectListener {
 
-    private WifiDirectCommunication wifiDirectCommunication;
+    private WifiDirectConnector wifiDirectCommunication;
     private LinearLayout linearLayout;
     private ArrayList<WifiP2pDevice> availableDevices = new ArrayList<>();
     private EditText playerNameEditText;
@@ -40,7 +40,7 @@ public class SpielBeitretenFragment extends Fragment implements WifiDirectListen
         playerNameEditText = view.findViewById(R.id.playerNameEditText);
         Button zurueckZumHauptmenueButton = view.findViewById(R.id.zurueckZumHauptmenueSpielBeitretenButton);
 
-        wifiDirectCommunication = new WifiDirectCommunicationImpl();
+        wifiDirectCommunication = new WifiDirectConnectorImpl();
         wifiDirectCommunication.initialize(getActivity());
         wifiDirectCommunication.setListener(this);
         wifiDirectCommunication.discoverPeers();

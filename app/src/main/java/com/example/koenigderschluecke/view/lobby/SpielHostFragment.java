@@ -20,8 +20,8 @@ import android.widget.Toast;
 import com.example.koenigderschluecke.R;
 import com.example.koenigderschluecke.controller.LobbyController;
 import com.example.koenigderschluecke.network.DeviceListAdapter;
-import com.example.koenigderschluecke.network.WifiDirectCommunication;
-import com.example.koenigderschluecke.network.WifiDirectCommunicationImpl;
+import com.example.koenigderschluecke.network.WifiDirectConnector;
+import com.example.koenigderschluecke.network.WifiDirectConnectorImpl;
 import com.example.koenigderschluecke.network.WifiDirectListener;
 
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ import java.util.Collection;
 
 public class SpielHostFragment extends Fragment implements WifiDirectListener {
 
-    private WifiDirectCommunication wifiDirectCommunication;
+    private WifiDirectConnector wifiDirectCommunication;
     private ArrayList<WifiP2pDevice> connectedDevices = new ArrayList<>();
     private DeviceListAdapter deviceListAdapter;
     private LobbyController lobbyController;
@@ -41,7 +41,7 @@ public class SpielHostFragment extends Fragment implements WifiDirectListener {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        wifiDirectCommunication = new WifiDirectCommunicationImpl();
+        wifiDirectCommunication = new WifiDirectConnectorImpl();
         wifiDirectCommunication.initialize(context);
         wifiDirectCommunication.setListener(this);
     }
